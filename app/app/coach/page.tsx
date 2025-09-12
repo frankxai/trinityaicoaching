@@ -24,13 +24,27 @@ export default function CoachPage() {
     setMessages(next);
     setLoading(true);
     try {
-      const res = await fetch("/api/chat", {
+      const res = await fetch("/api/stream/coach", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: next.slice(-12), orchestrate: triad })
       });
-      const data = await res.json();
-      setMessages([...next, { role: "assistant", content: data.reply }]);
+      const reader = res.body?.getReader();
+      const dec = new TextDecoder();
+      let acc = "";
+      setMessages(prev => [...prev, { role: "assistant", content: "" }]);
+      if (reader) {
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          acc += dec.decode(value, { stream: true });
+          setMessages(prev => {
+            const copy = [...prev];
+            copy[copy.length - 1] = { role: "assistant", content: acc };
+            return copy;
+          });
+        }
+      }
     } catch (e) {
       setMessages([...next, { role: "assistant", content: "I had trouble replying. Try again." }]);
     } finally {

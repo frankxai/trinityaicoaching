@@ -16,9 +16,19 @@ export default function SuperAgentPage() {
   async function send() {
     const text = input.trim(); if (!text) return; setInput("");
     const next = [...messages, { role: 'user' as const, content: text } as Message]; setMessages(next); setLoading(true);
-    const res = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: [{ role: 'system', content: SYSTEM }, ...next].slice(-12), orchestrate: triad }) });
-    const data = await res.json();
-    setMessages([...next, { role: 'assistant' as const, content: data.reply } as Message]);
+    const res = await fetch('/api/stream/coach', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: [{ role: 'system', content: SYSTEM }, ...next].slice(-12), orchestrate: triad }) });
+    const reader = res.body?.getReader();
+    const dec = new TextDecoder();
+    let acc = '';
+    setMessages(prev => [...prev, { role: 'assistant', content: '' }]);
+    if (reader) {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        acc += dec.decode(value, { stream: true });
+        setMessages(prev => { const copy = [...prev]; copy[copy.length-1] = { role: 'assistant', content: acc }; return copy; });
+      }
+    }
     setLoading(false);
   }
 
@@ -43,4 +53,3 @@ export default function SuperAgentPage() {
     </div>
   );
 }
-
