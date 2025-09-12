@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f63ff"/>
+      <stop offset="50%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#d946ef"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1200" height="630" fill="#0a0a0a"/>
+  <rect x="40" y="40" width="1120" height="550" rx="24" fill="url(#g)" opacity="0.12"/>
+  <g transform="translate(80,140)">
+    <circle cx="120" cy="120" r="110" fill="#0f0f0f"/>
+    <path d="M120 40 L190 170 L50 170 Z" fill="url(#g)" opacity="0.9"/>
+  </g>
+  <text x="320" y="250" font-family="Inter, ui-sans-serif, system-ui" font-size="64" fill="#ffffff" font-weight="700">Trinity AI Coaching</text>
+  <text x="320" y="320" font-family="Inter, ui-sans-serif, system-ui" font-size="28" fill="#cfcfcf">Body • Mind • Soul — unified coaching experience</text>
+</svg>
+

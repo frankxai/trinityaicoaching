@@ -1,0 +1,29 @@
+:root{--bg:#0b0b0f;--card:rgba(255,255,255,.06);--border:rgba(255,255,255,.12);--text:#e8e8f0;--muted:#a1a1b2;--brand:#5864ff;--accent:#d946ef}
+*{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Arial;background:radial-gradient(800px 400px at 70% -10%,rgba(88,100,255,.25),rgba(88,100,255,0)),radial-gradient(800px 400px at 10% -20%,rgba(217,70,239,.18),rgba(217,70,239,0)),var(--bg);color:var(--text)}
+.container{max-width:1100px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:0;backdrop-filter:blur(8px);background:rgba(0,0,0,.35);border-bottom:1px solid var(--border)}
+.nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
+.brand svg{height:26px;width:26px}
+.nav a{color:var(--muted);text-decoration:none;margin-left:16px}
+.nav a:hover{color:#fff}
+.hero{padding:80px 0 40px 0;text-align:center}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:var(--muted);font-size:12px}
+.title{margin:12px auto 0 auto;max-width:900px;font-size:44px;line-height:1.1;font-weight:700}
+.subtitle{margin:16px auto 0 auto;max-width:780px;color:var(--muted);font-size:18px}
+.cta{margin-top:24px;display:flex;gap:12px;justify-content:center}
+.btn{background:var(--brand);color:#fff;border:none;padding:12px 16px;border-radius:10px;font-weight:600;cursor:pointer}
+.btn.alt{background:transparent;border:1px solid var(--border);color:#fff}
+.grid{display:grid;gap:16px}
+@media(min-width:900px){.grid.cols-3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px}
+.card h3{margin:4px 0 10px 0;font-size:16px}
+.card p{margin:0;color:var(--muted);font-size:14px;line-height:1.5}
+.list{margin:10px 0 0 0;padding:0 0 0 16px;color:var(--muted);font-size:14px}
+.section{padding:36px 0}
+.section h2{font-size:20px;margin:0 0 14px 0}
+.footer{border-top:1px solid var(--border);padding:36px 0;color:var(--muted);font-size:14px}
+.badge{display:inline-block;font-size:12px;border:1px solid var(--border);padding:4px 8px;border-radius:999px;background:rgba(255,255,255,.04);color:#cbd5ff}
+.icons{display:flex;gap:8px;margin-top:10px}
+svg.icon{height:20px;width:20px;opacity:.85}
+

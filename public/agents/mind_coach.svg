@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4f63ff"/>
+      <stop offset="100%" stop-color="#d946ef"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="160" rx="16" fill="#0a0a0a"/>
+  <rect x="8" y="8" width="304" height="144" rx="14" fill="url(#g)" opacity="0.15"/>
+  <g transform="translate(24,24)">
+    <rect x="6" y="10" width="36" height="28" rx="6" fill="#0f0f0f"/>
+    <rect x="12" y="18" width="24" height="4" rx="2" fill="#fff" opacity="0.8"/>
+    <rect x="12" y="24" width="20" height="4" rx="2" fill="#fff" opacity="0.6"/>
+    <rect x="12" y="30" width="16" height="4" rx="2" fill="#fff" opacity="0.4"/>
+  </g>
+  <text x="90" y="60" font-family="Inter, ui-sans-serif, system-ui" font-size="20" fill="#ffffff">Mind Coach</text>
+  <text x="90" y="88" font-family="Inter, ui-sans-serif, system-ui" font-size="12" fill="#cfcfcf">Focus • Habits • Systems</text>
+</svg>
+

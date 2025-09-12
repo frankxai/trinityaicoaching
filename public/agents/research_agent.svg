@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160" fill="none">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="160" rx="16" fill="#0a0a0a"/>
+  <rect x="8" y="8" width="304" height="144" rx="14" fill="url(#g)" opacity="0.15"/>
+  <g transform="translate(24,24)">
+    <circle cx="24" cy="24" r="14" stroke="#fff" stroke-width="4" fill="none"/>
+    <line x1="34" y1="34" x2="44" y2="44" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="90" y="60" font-family="Inter, ui-sans-serif, system-ui" font-size="20" fill="#ffffff">Research Agent</text>
+  <text x="90" y="88" font-family="Inter, ui-sans-serif, system-ui" font-size="12" fill="#cfcfcf">Evidence • Protocols • Summaries</text>
+</svg>
+
