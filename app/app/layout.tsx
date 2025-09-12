@@ -10,7 +10,9 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             <nav className="grid gap-2 text-sm">
               <a href="/app" className="hover:text-white">Overview</a>
               <a href="/app/coach" className="hover:text-white">Coach Chat</a>
+              <a href="/app/super-agent" className="hover:text-white">Super Agent</a>
               <a href="/app/agents-chat" className="hover:text-white">Agents Chat</a>
+              <a href="/app/agents-builder" className="hover:text-white">Agent Builder</a>
               <a href="/app/plans" className="hover:text-white">Plans</a>
               <a href="/app/intake" className="hover:text-white">Intake</a>
               <a href="/app/journal" className="hover:text-white">Journal</a>

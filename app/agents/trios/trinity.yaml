@@ -1,0 +1,15 @@
+name: Trinity Triad
+members:
+  - agents/body_coach.yaml
+  - agents/mind_coach.yaml
+  - agents/soul_guide.yaml
+orchestration:
+  style: synthesize
+  rules:
+    - keep it practical and measurable
+    - propose 1–3 next actions
+    - surface disagreements and resolve them
+outputs:
+  - sections: [Body, Mind, Soul]
+  - next_actions
+
