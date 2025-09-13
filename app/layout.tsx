@@ -17,12 +17,20 @@ export const metadata = {
 
 import "./globals.css";
 import Link from "next/link";
+import Script from "next/script";
 import HeaderNav from "@/components/HeaderNav";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
+        <Script id="ld-json" type="application/ld+json" strategy="afterInteractive">{JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Trinity AI',
+          url: 'https://trinityaicoaching.vercel.app',
+          sameAs: ['https://github.com/frankxai/trinityaicoaching']
+        })}</Script>
         <div className="min-h-screen bg-hero bg-no-repeat bg-top">
           <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60">
             <div className="container-px mx-auto flex h-16 items-center justify-between">

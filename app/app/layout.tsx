@@ -8,6 +8,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <div className="mt-8 grid gap-6 lg:grid-cols-3">
         <aside className="glass rounded-2xl p-6 lg:col-span-1">
             <nav className="grid gap-2 text-sm">
+              <a href="/app/get-started" className="hover:text-white">Get Started</a>
               <a href="/app" className="hover:text-white">Overview</a>
               <a href="/app/coach" className="hover:text-white">Coach Chat</a>
               <a href="/app/super-agent" className="hover:text-white">Super Agent</a>
