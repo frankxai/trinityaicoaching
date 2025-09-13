@@ -33,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         })}</Script>
         <div className="min-h-screen bg-hero bg-no-repeat bg-top">
           <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-neutral-950/60 border-b border-white/10">
-            <div className="container-px mx-auto flex h-[68px] items-center justify-between">
+            <div className="container-px mx-auto max-w-7xl flex h-[68px] items-center justify-between">
               <Link href="/" className="flex items-center gap-2">
                 <img alt="Trinity" src="/brand/icon.svg" className="h-8 w-8" />
                 <span className="font-semibold tracking-tight text-[15px]">Trinity AI</span>

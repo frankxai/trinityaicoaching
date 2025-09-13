@@ -12,11 +12,22 @@ html, body {
 
 body {
   @apply bg-neutral-950 text-neutral-100 antialiased;
+  font-size: 15px;
 }
+
+@media (min-width: 640px) {
+  body { font-size: 16px; }
+}
+
+/* Design tokens */
+.btn { @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition; }
+.btn-primary { @apply bg-brand-600 text-white hover:bg-brand-700; }
+.btn-ghost { @apply bg-white/10 text-white hover:bg-white/20; }
+.input { @apply rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-brand-600; }
+.card { @apply rounded-2xl border border-white/10 bg-white/5 p-6; }
 
 .glass {
   @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-lg;
 }
 
 .container-px { @apply px-4 sm:px-6 lg:px-8; }
-

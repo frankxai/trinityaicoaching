@@ -2,9 +2,9 @@ export const metadata = { title: "Trinity App" };
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="container-px mx-auto max-w-6xl py-10">
-      <h1 className="text-2xl font-semibold">Trinity Dashboard</h1>
-      <p className="mt-2 text-neutral-400">Welcome back. Build momentum today.</p>
+    <div className="container-px mx-auto max-w-7xl py-10">
+      <h1 className="text-3xl font-semibold">Trinity Dashboard</h1>
+      <p className="mt-2 text-neutral-300">Welcome back. Build momentum today.</p>
       <div className="mt-8 grid gap-6 lg:grid-cols-3">
         <aside className="glass rounded-2xl p-6 lg:col-span-1">
             <nav className="grid gap-2 text-sm">

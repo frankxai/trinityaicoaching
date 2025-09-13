@@ -6,7 +6,7 @@ export default function Page() {
     <main>
       <section className="relative">
         <div className="absolute inset-0 bg-grid bg-[length:24px_24px] opacity-[0.15]" />
-        <div className="container-px mx-auto pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-32 lg:pb-36">
+        <div className="container-px mx-auto max-w-7xl pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-32 lg:pb-36">
           <div className="mx-auto max-w-4xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">
               <Sparkles className="h-3.5 w-3.5 text-brand-300" />
@@ -28,14 +28,14 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="container-px mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-4 -mt-8">
+      <section className="container-px mx-auto max-w-7xl grid gap-6 sm:grid-cols-2 lg:grid-cols-4 -mt-8">
         <Feature icon={<Activity className="text-brand-300" />} title="Body Coach" desc="Training, nutrition, and recovery plans tailored to your baseline." />
         <Feature icon={<BrainCircuit className="text-brand-300" />} title="Mind Coach" desc="Cognition, discipline, habits, and deep work systems that stick." />
         <Feature icon={<HeartHandshake className="text-brand-300" />} title="Soul Guide" desc="Values, mission, and alignment—build a life that feels true." />
         <Feature icon={<ShieldCheck className="text-brand-300" />} title="Accountability" desc="Daily check-ins, weekly reviews, and gentle course correction." />
       </section>
 
-      <section className="container-px mx-auto mt-20">
+      <section className="container-px mx-auto max-w-7xl mt-20">
         <div className="glass rounded-2xl p-8">
           <h3 className="text-xl font-semibold">Our Principles</h3>
           <ul className="mt-3 grid gap-2 sm:grid-cols-3 text-sm text-neutral-300">
@@ -46,7 +46,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="container-px mx-auto mt-20 grid gap-8 lg:grid-cols-3">
+      <section className="container-px mx-auto max-w-7xl mt-20 grid gap-8 lg:grid-cols-3">
         <div className="glass rounded-2xl p-8">
           <h3 className="text-xl font-semibold">Programs that fit real life</h3>
           <p className="mt-3 text-neutral-300">Generate 7/30/90‑day plans and adapt weekly. Keep streaks visible and wins small but steady.</p>
@@ -73,7 +73,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="container-px mx-auto mt-20 grid gap-8 lg:grid-cols-2">
+      <section className="container-px mx-auto max-w-7xl mt-20 grid gap-8 lg:grid-cols-2">
         <div className="glass rounded-2xl p-8">
           <h3 className="text-xl font-semibold">How Trinity works</h3>
           <ul className="mt-3 text-neutral-300 text-sm list-disc pl-5 space-y-1">
