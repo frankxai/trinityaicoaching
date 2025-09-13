@@ -17,6 +17,7 @@ export const metadata = {
 
 import "./globals.css";
 import Link from "next/link";
+import HeaderNav from "@/components/HeaderNav";
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -29,23 +30,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <img alt="Trinity" src="/brand/icon.svg" className="h-7 w-7" />
                 <span className="font-semibold tracking-tight">Trinity AI</span>
               </Link>
-              <nav className="flex items-center gap-4 text-sm text-neutral-300">
-                <Link href="/app" className="hover:text-white">App</Link>
-                <Link href="/app/coach" className="hover:text-white">Coach</Link>
-                <Link href="/app/plans" className="hover:text-white">Plans</Link>
-                <Link href="/app/journal" className="hover:text-white">Journal</Link>
-                <Link href="/app/habits" className="hover:text-white">Habits</Link>
-                <Link href="/docs" className="hover:text-white">Docs</Link>
-                <Link href="/blog" className="hover:text-white">Blog</Link>
-                <Link href="/roadmap" className="hover:text-white">Roadmap</Link>
-                <Link href="/agents" className="hover:text-white">Agents</Link>
-                <a href="/coaches/" className="hover:text-white">Coaches</a>
-                <Link href="/pricing" className="hover:text-white">Pricing</Link>
-                <a href="https://vercel.com/" className="hover:text-white" target="_blank">Deploy</a>
-              </nav>
+              <HeaderNav />
             </div>
           </header>
-          {children}
+          <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-16 focus:left-4 bg-white/10 px-3 py-1 rounded">Skip to content</a>
+          <main id="main">{children}</main>
           <footer className="border-t border-white/10 mt-24">
             <div className="container-px mx-auto py-12 text-sm text-neutral-400 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-2">
@@ -56,6 +45,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/" className="hover:text-white">Home</Link>
                 <Link href="/app" className="hover:text-white">Dashboard</Link>
                 <Link href="/app/coach" className="hover:text-white">Coach</Link>
+                <Link href="/learn" className="hover:text-white">Learn</Link>
+                <Link href="/faq" className="hover:text-white">FAQ</Link>
+                <Link href="/legal/safety" className="hover:text-white">Safety</Link>
                 <a href="https://github.com/" className="hover:text-white" target="_blank">GitHub</a>
               </div>
             </div>
