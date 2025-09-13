@@ -19,6 +19,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
               <a href="/app/journal" className="hover:text-white">Journal</a>
               <a href="/app/habits" className="hover:text-white">Habits</a>
               <a href="/app/profile" className="hover:text-white">Profile</a>
+              <a href="/app/settings" className="hover:text-white">Settings</a>
               <a href="/app/checkin" className="hover:text-white">Check‑in</a>
               <a href="/app/review" className="hover:text-white">Weekly Review</a>
             </nav>

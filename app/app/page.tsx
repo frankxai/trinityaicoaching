@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import { getLocal } from "@/lib/clientStore";
+import { getLocal, setLocal } from "@/lib/clientStore";
+import { todayISO } from "@/lib/date";
 
 export default function DashboardPage() {
   const [activePlan, setActivePlan] = useState<any | null>(null);
@@ -9,6 +10,9 @@ export default function DashboardPage() {
     const id = getLocal<string | null>("plans.active", null);
     const ap = saved.find(p=>p.id===id) || null; setActivePlan(ap);
   }, []);
+  const [today, setToday] = useState<string>(todayISO());
+  const [checked, setChecked] = useState<Record<string, boolean>>({});
+
   const topTasks = useMemo(()=>{
     const p = activePlan?.plan as { title: string; items: string[] }[] | undefined;
     if (!p) return [] as string[];
@@ -16,15 +20,36 @@ export default function DashboardPage() {
     return items.slice(0,3);
   }, [activePlan]);
 
+  useEffect(()=>{
+    const map = getLocal<Record<string, any>>("checkins.map", {});
+    const tasks = map[today]?.tasks || [];
+    const m: Record<string, boolean> = {}; for (const t of tasks) m[t]=true; setChecked(m);
+  }, [today]);
+
+  function toggleTask(task: string) {
+    setChecked(prev => ({ ...prev, [task]: !prev[task] }));
+    const map = getLocal<Record<string, any>>("checkins.map", {});
+    const entry = map[today] || { date: today, tasks: [], mood: 3, energy: 3 };
+    const exists = new Set(entry.tasks||[]);
+    if (exists.has(task)) exists.delete(task); else exists.add(task);
+    entry.tasks = Array.from(exists);
+    map[today] = entry; setLocal("checkins.map", map);
+  }
+
   return (
     <div className="grid gap-6">
       <section className="glass rounded-2xl p-6">
         <h2 className="text-lg font-semibold">Today</h2>
         <p className="mt-2 text-neutral-300">Quick wins and focus for the day.</p>
         {topTasks.length>0 ? (
-          <ul className="mt-4 grid gap-2 text-sm text-neutral-300 list-disc pl-5">
-            {topTasks.map((t,i)=>(<li key={i}>{t}</li>))}
-          </ul>
+          <div className="mt-4 grid gap-2 text-sm text-neutral-300">
+            {topTasks.map((t,i)=>(
+              <label key={i} className="flex items-center gap-3">
+                <input type="checkbox" checked={!!checked[t]} onChange={()=>toggleTask(t)} />
+                <span>{t}</span>
+              </label>
+            ))}
+          </div>
         ) : (
           <ul className="mt-4 grid gap-2 text-sm text-neutral-300 list-disc pl-5">
             <li>10-minute mobility and breathwork</li>

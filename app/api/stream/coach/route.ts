@@ -8,7 +8,7 @@ const SYSTEM_PROMPT = `You are Trinity Coach: a collaborative triad of specialis
 Respond in concise sections with 1–3 next actions.`;
 
 export async function POST(req: NextRequest) {
-  const { messages = [], orchestrate = false } = await req.json();
+  const { messages = [], orchestrate = false, model } = await req.json();
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) {
     const fallback = `Body: 10-minute walk and hydrate.\nMind: One 45-min focus block.\nSoul: Gratitude note tonight.`;
@@ -17,9 +17,11 @@ export async function POST(req: NextRequest) {
 
   const openai = new OpenAI({ apiKey });
 
+  const useModel = String(model || process.env.OPENAI_MODEL || "gpt-4o-mini");
+
   if (!orchestrate) {
     const stream = await openai.chat.completions.create({
-      model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+      model: useModel,
       stream: true,
       temperature: 0.6,
       messages: [{ role: "system", content: SYSTEM_PROMPT }, ...messages]
@@ -46,14 +48,14 @@ export async function POST(req: NextRequest) {
     { name: 'Soul', sys: 'You are Soul Guide. Values, alignment, meaning. Be grounded and kind.' }
   ];
   const notes = await Promise.all(agents.map(a => openai.chat.completions.create({
-    model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
+    model: useModel,
     messages: [{ role: 'system', content: a.sys }, ...userOnly],
     temperature: 0.5,
     max_tokens: 300,
   })));
   const sections = notes.map((r, i) => `## ${agents[i].name}\n${r.choices[0]?.message?.content ?? ''}`).join('\n\n');
   const synthStream = await openai.chat.completions.create({
-    model: process.env.OPENAI_MODEL || 'gpt-4o-mini',
+    model: useModel,
     stream: true,
     temperature: 0.5,
     messages: [
@@ -74,4 +76,3 @@ export async function POST(req: NextRequest) {
   });
   return new Response(rs, { headers: { "Content-Type": "text/plain; charset=utf-8" } });
 }
-
