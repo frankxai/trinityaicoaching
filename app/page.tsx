@@ -35,6 +35,17 @@ export default function Page() {
         <Feature icon={<ShieldCheck className="text-brand-300" />} title="Accountability" desc="Daily check-ins, weekly reviews, and gentle course correction." />
       </section>
 
+      <section className="container-px mx-auto mt-20">
+        <div className="glass rounded-2xl p-8">
+          <h3 className="text-xl font-semibold">Our Principles</h3>
+          <ul className="mt-3 grid gap-2 sm:grid-cols-3 text-sm text-neutral-300">
+            <li><span className="font-medium text-white">Compassion over pressure.</span> We choose kind, sustainable change.</li>
+            <li><span className="font-medium text-white">Small steps win.</span> 1–3 actions a day beat perfect plans.</li>
+            <li><span className="font-medium text-white">Evidence with context.</span> We prefer what works in real life.</li>
+          </ul>
+        </div>
+      </section>
+
       <section className="container-px mx-auto mt-20 grid gap-8 lg:grid-cols-3">
         <div className="glass rounded-2xl p-8">
           <h3 className="text-xl font-semibold">Programs that fit real life</h3>
@@ -81,6 +92,10 @@ export default function Page() {
           <div className="mt-6 flex gap-3">
             <Link href="/blog/trinity-ai-super-agent" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Read article</Link>
             <Link href="/blog" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">More posts</Link>
+          </div>
+          <div className="mt-8 text-sm text-neutral-400">
+            For coaches: publish your programs and agents, route intake, and run operations with less admin.
+            <a className="ml-2 text-brand-300 hover:text-brand-200" href="/coaches/">Learn more</a>.
           </div>
         </div>
       </section>

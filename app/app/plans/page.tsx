@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
 import { getLocal, setLocal } from "@/lib/clientStore";
+import { PROGRAM_TEMPLATES } from "@/lib/programTemplates";
 
 type Plan = { title: string; items: string[] }[];
 
@@ -48,6 +49,11 @@ export default function PlansPage() {
     const a = document.createElement('a');
     a.href = url; a.download = `${horizon}-day-plan.md`; a.click();
     URL.revokeObjectURL(url);
+  }
+  function exportJSON() {
+    if (!plan.length) return;
+    const blob = new Blob([JSON.stringify({ horizon, plan }, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download=`${horizon}-day-plan.json`; a.click(); URL.revokeObjectURL(url);
   }
   function exportICS() {
     if (plan.length===0) return;
@@ -117,6 +123,12 @@ export default function PlansPage() {
           {plan.length>0 && (
             <button onClick={saveCurrent} className="rounded-lg bg-white/10 px-3 py-2 text-sm hover:bg-white/20">Save as plan</button>
           )}
+          <div className="ml-auto flex items-center gap-2 text-xs text-neutral-300">
+            <span>Templates:</span>
+            {Object.entries(PROGRAM_TEMPLATES).map(([k,v]) => (
+              <button key={k} onClick={()=>{ setHorizon(v.horizon as 7|30|90); setPlan(v.plan as any); }} className="rounded-full border border-white/10 bg-white/5 px-2 py-1 hover:bg-white/10">{v.name}</button>
+            ))}
+          </div>
         </div>
       </section>
       <section className="glass rounded-2xl p-6">
@@ -131,6 +143,9 @@ export default function PlansPage() {
           )}
           {plan.length > 0 && (
             <button onClick={exportICS} className="rounded-lg bg-white/10 px-3 py-1.5 text-sm hover:bg-white/20">Export ICS</button>
+          )}
+          {plan.length > 0 && (
+            <button onClick={exportJSON} className="rounded-lg bg-white/10 px-3 py-1.5 text-sm hover:bg-white/20">Export JSON</button>
           )}
         </div>
         <div className="mt-4 grid gap-4">
