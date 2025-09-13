@@ -10,6 +10,8 @@ const items = [
   { href: "/app/journal", label: "Journal" },
   { href: "/app/habits", label: "Habits" },
   { href: "/docs", label: "Docs" },
+  { href: "/methods", label: "Methods" },
+  { href: "/about", label: "About" },
   { href: "/blog", label: "Blog" },
   { href: "/roadmap", label: "Roadmap" },
   { href: "/agents", label: "Agents" },

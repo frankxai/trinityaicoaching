@@ -1,5 +1,6 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { parseFrontMatter } from "@/lib/md";
 
 type Post = { slug: string; title: string; description: string; date: string };
 
@@ -10,9 +11,10 @@ export default function BlogIndex() {
     const files = readdirSync(dir).filter(f=>f.endsWith('.md'));
     posts = files.map(f => {
       const raw = readFileSync(resolve(dir, f), 'utf8');
-      const title = (raw.match(/^title:\s*(.*)$/m)?.[1] || f.replace(/-/g,' ').replace(/\.md$/, '')) as string;
-      const description = (raw.match(/^description:\s*(.*)$/m)?.[1] || '') as string;
-      const date = (raw.match(/^date:\s*(.*)$/m)?.[1] || '') as string;
+      const { meta } = parseFrontMatter(raw);
+      const title = (meta.title || f.replace(/-/g,' ').replace(/\.md$/, '')) as string;
+      const description = (meta.description || '') as string;
+      const date = (meta.date || '') as string;
       return { slug: f.replace(/\.md$/, ''), title, description, date };
     }).sort((a,b)=> (b.date||'').localeCompare(a.date||''));
   } catch {}
@@ -32,4 +34,3 @@ export default function BlogIndex() {
     </div>
   );
 }
-

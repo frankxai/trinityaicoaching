@@ -1,15 +1,16 @@
 export const metadata = {
   title: "Trinity AI Coaching Platform",
   description: "Transform body, mind, and soul with AI-aligned coaching.",
-  metadataBase: new URL("https://trinity.ai.local"),
+  metadataBase: new URL("https://trinityaicoaching.vercel.app"),
   openGraph: {
     title: "Trinity AI Coaching Platform",
     description: "Transform body, mind, and soul with AI-aligned coaching.",
-    url: "https://trinity.ai.local",
+    url: "https://trinityaicoaching.vercel.app",
     images: [
       { url: "/og.svg", width: 1200, height: 630, alt: "Trinity AI" }
     ],
   },
+  twitter: { card: 'summary_large_image', title: 'Trinity AI Coaching Platform', description: 'Transform body, mind, and soul with AI‑aligned coaching.' },
   icons: {
     icon: "/favicon.svg"
   }
@@ -39,6 +40,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <span className="font-semibold tracking-tight text-[15px]">Trinity AI</span>
               </Link>
               <HeaderNav />
+              <div className="hidden md:flex items-center gap-2 text-sm">
+                <Link href="/hub" className="hover:text-white">Hub</Link>
+                <Link href="/sign-in" className="hover:text-white">Sign In</Link>
+              </div>
             </div>
           </header>
           <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-16 focus:left-4 bg-white/10 px-3 py-1 rounded">Skip to content</a>
