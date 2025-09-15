@@ -12,6 +12,11 @@ export default function Page() {
               <Sparkles className="h-3.5 w-3.5 text-brand-300" />
               Build strength, clarity, and meaning — together.
             </div>
+            <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">
+              <span className="rounded-sm bg-brand-600/20 text-brand-300 px-1.5 py-0.5">New</span>
+              Coach Hub & Agent Library are live.
+              <a href="/hub" className="text-brand-300 hover:text-brand-200">Explore</a>
+            </div>
             <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
               Coaching that balances Body, Mind, and Soul.
             </h1>
@@ -22,6 +27,7 @@ export default function Page() {
               <Link href="/app" className="rounded-md bg-brand-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-brand-600 transition">Open Dashboard</Link>
               <Link href="/app/coach" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Try Coach</Link>
               <Link href="/app/super-agent" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Super Agent</Link>
+              <Link href="/app/get-started" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Get Started</Link>
               <Link href="/blog" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Read the vision</Link>
             </div>
           </div>
