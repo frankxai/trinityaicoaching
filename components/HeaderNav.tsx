@@ -3,34 +3,29 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const items = [
-  { href: "/app", label: "App" },
+  { href: "/app", label: "Command" },
   { href: "/hub", label: "Hub" },
-  { href: "/app/coach", label: "Coach" },
-  { href: "/app/super-agent", label: "Super Agent" },
-  { href: "/learn", label: "Learn" },
-  { href: "/app/plans", label: "Plans" },
-  { href: "/app/journal", label: "Journal" },
-  { href: "/app/habits", label: "Habits" },
-  { href: "/docs", label: "Docs" },
-  { href: "/methods", label: "Methods" },
-  { href: "/about", label: "About" },
-  { href: "/blog", label: "Blog" },
-  { href: "/roadmap", label: "Roadmap" },
+  { href: "/coaches", label: "Coaches" },
   { href: "/agents", label: "Agents" },
-  { href: "/coaches/", label: "Coaches" },
-  { href: "/pricing", label: "Pricing" }
+  { href: "/learn", label: "Learn" },
+  { href: "/docs", label: "Docs" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/roadmap", label: "Roadmap" }
 ];
 
 export default function HeaderNav() {
   const pathname = usePathname();
   return (
     <nav className="flex items-center gap-5 text-[15px] text-neutral-300">
-      {items.map((i) => {
-        const active = pathname === i.href || (i.href.endsWith("/") && pathname?.startsWith(i.href.replace(/\/$/, "")));
+      {items.map((item) => {
+        const isActive = pathname === item.href || pathname?.startsWith(`${item.href}/`);
         const base = "px-2 py-1 rounded-md transition focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-600";
-        const cls = active ? `text-white bg-white/10 ${base}` : `hover:text-white ${base}`;
-        if (i.href.startsWith("/coaches")) return <a key={i.href} href={i.href} className={cls}>{i.label}</a>;
-        return <Link key={i.href} href={i.href} className={cls}>{i.label}</Link>;
+        const cls = isActive ? `text-white bg-white/10 ${base}` : `hover:text-white ${base}`;
+        return (
+          <Link key={item.href} href={item.href} className={cls}>
+            {item.label}
+          </Link>
+        );
       })}
       <div className="ml-2 hidden sm:flex items-center gap-2">
         <Link href="/app" className="rounded-md bg-brand-600 hover:bg-brand-700 px-3 py-1.5 text-sm font-medium text-white">Open App</Link>

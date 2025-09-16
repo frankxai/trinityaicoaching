@@ -1,13 +1,18 @@
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { MarkdownDoc } from "@/components/MarkdownDoc";
+
+export const metadata = {
+  title: "Architecture | TrinityAI",
+  description: "System diagram, data flows, and component responsibilities powering TrinityAI.",
+};
 
 export default function ArchitectureDoc() {
-  const raw = readFileSync(resolve(process.cwd(), "docs/ARCHITECTURE.md"), "utf8");
   return (
-    <div className="glass rounded-2xl p-6">
-      <h1 className="text-xl font-semibold mb-4">Architecture</h1>
-      <pre className="whitespace-pre-wrap text-sm text-neutral-200">{raw}</pre>
-    </div>
+    <MarkdownDoc
+      file="docs/ARCHITECTURE.md"
+      eyebrow="System Design"
+      title="Architecture"
+      description="Understand how the Trinity Command app, agent services, data stores, and automation pods connect."
+    />
   );
 }
 

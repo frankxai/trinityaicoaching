@@ -1,13 +1,18 @@
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { MarkdownDoc } from "@/components/MarkdownDoc";
+
+export const metadata = {
+  title: "MCP Server | TrinityAI",
+  description: "Expose Trinity tools to external AI clients through the Model Context Protocol server scaffold.",
+};
 
 export default function MCPDoc() {
-  const raw = readFileSync(resolve(process.cwd(), "docs/MCP.md"), "utf8");
   return (
-    <div className="glass rounded-2xl p-6">
-      <h1 className="text-xl font-semibold mb-4">MCP Server</h1>
-      <pre className="whitespace-pre-wrap text-sm text-neutral-200">{raw}</pre>
-    </div>
+    <MarkdownDoc
+      file="docs/MCP.md"
+      eyebrow="Automation Layer"
+      title="MCP Server"
+      description="Wire the Trinity toolkit into MCP compatible assistants and orchestrators."
+    />
   );
 }
 

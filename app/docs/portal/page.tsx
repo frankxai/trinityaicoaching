@@ -1,22 +1,17 @@
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
-import { marked } from "marked";
+import { MarkdownDoc } from "@/components/MarkdownDoc";
 
 export const metadata = {
   title: "Portal Playbook | TrinityAI",
-  description: "Navigation, shared data contracts, and KPIs for Trinity Command, Coach Hub, and Brotherhood surfaces."
+  description: "Navigation, shared data contracts, and KPIs for Trinity Command, Coach Hub, and Brotherhood surfaces.",
 };
 
 export default function PortalDocs() {
-  const file = resolve(process.cwd(), "docs", "PORTAL.md");
-  const raw = readFileSync(file, "utf8");
-  const html = marked.parse(raw);
-
   return (
-    <div className="container-px mx-auto max-w-4xl py-12">
-      <div className="prose prose-invert max-w-4xl">
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-      </div>
-    </div>
+    <MarkdownDoc
+      file="docs/PORTAL.md"
+      eyebrow="Experience Ops"
+      title="Portal Playbook"
+      description="Map the Trinity Command surfaces, shared vocabularies, and the KPIs we optimize for each persona."
+    />
   );
 }

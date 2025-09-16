@@ -23,6 +23,7 @@ Optional: set `OPENAI_API_KEY` to enable AI responses.
 ## Deploy
 
 - Vercel: connect this repo, default settings work. See `docs/DEPLOYMENT.md`.
+- Configure environment variables using `docs/VERCEL-ENV.md` before production deploys.
 
 ## Structure
 
