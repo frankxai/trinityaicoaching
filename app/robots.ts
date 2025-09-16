@@ -1,10 +1,9 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const base = 'https://trinity.ai.local';
+  const base = (process.env.NEXT_PUBLIC_SITE_URL || "https://trinityaicoaching.vercel.app").replace(/\/$/, "");
   return {
-    rules: [{ userAgent: '*', allow: '/' }],
-    sitemap: base + '/sitemap.xml'
+    rules: [{ userAgent: "*", allow: "/" }],
+    sitemap: `${base}/sitemap.xml`,
   };
 }
-

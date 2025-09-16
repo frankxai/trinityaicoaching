@@ -21,3 +21,20 @@
 - Advanced analytics: adherence trends, load management
 - Team coaching and coach console
 
+## Phase 4 – Portal Orchestration
+- Ship Trinity Command dashboard (daily rituals, mission cards, avatars)
+- Coach Hub upgrades: module studio, avatar ops, automation library
+- Shared data layer (`portalData.ts`) powering marketing + product surfaces
+- Momentum metrics pipeline + wearable sync foundation
+
+## Phase 5 – Tokenized Brotherhood
+- Soulbound identity + honor ledger integration (Polygon zkEVM)
+- Contribution bounties + treasury dashboard
+- On-chain transparency reports and compliance guardrails (Guardian avatar)
+- Community missions with token rewards + retreat unlocks
+
+## Phase 6 – Sentient Ecosystem
+- Avatar federation with adaptive moods + biometric feedback loops
+- Autonomous automation pods managing operations end-to-end
+- Mixed reality rituals / breath guidance via AR + haptics
+- Digital-physical event orchestration + retreat concierge

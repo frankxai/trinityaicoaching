@@ -1,5 +1,21 @@
 import Link from "next/link";
 import { BrainCircuit, HeartHandshake, Activity, ShieldCheck, Sparkles } from "lucide-react";
+import { SectionHeading, Surface, Pill, BulletList } from "@/components/ui/primitives";
+import { avatarPersonas, learningModules, contributionPrograms, toolIntegrations, automationPlaybooks } from "@/lib/portalData";
+
+export const metadata = {
+  title: "TrinityAI Coaching Portal | Body, Mind & Soul Command Center",
+  description: "Launch AI-augmented coaching with Trinity Command, Coach Hub, avatar guild, automation playbooks, and tokenized Brotherhood incentives.",
+  keywords: [
+    "AI coaching platform",
+    "Trinity command dashboard",
+    "coach automation",
+    "AI avatar coach",
+    "tokenized accountability",
+    "body mind soul coaching",
+    "brotherhood honors"
+  ]
+};
 
 export default function Page() {
   return (
@@ -105,6 +121,192 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <section className="container-px mx-auto max-w-7xl mt-24">
+        <Surface tone="highlight">
+          <SectionHeading
+            eyebrow="Avatar Guild"
+            title="Meet the Trinity squad"
+            description="Five Ahmad avatars cover every mode: Body, Mind, Soul, Integrative, and Operations. Choose the energy you need and let the system do the rest."
+            actions={[{ href: "/agents", label: "Browse agent files" }]}
+          />
+          <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {avatarPersonas.slice(0, 4).map((avatar) => (
+              <div key={avatar.id} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div className="flex items-center justify-between">
+                  <div className="text-sm font-semibold">{avatar.name}</div>
+                  <Pill>{avatar.archetype}</Pill>
+                </div>
+                <p className="mt-2 text-sm text-neutral-300">{avatar.tagline}</p>
+                <div className="mt-4 text-xs text-neutral-400">
+                  Signature moves
+                  <ul className="mt-1 list-disc pl-4 space-y-1 text-neutral-300">
+                    {avatar.signatureMoves.slice(0, 2).map((move) => (
+                      <li key={move}>{move}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="mt-4 text-[11px] uppercase tracking-[0.18em] text-neutral-500">Active experiment</div>
+                <div className="mt-1 text-xs text-neutral-300">{avatar.activeExperiments[0]}</div>
+              </div>
+            ))}
+          </div>
+        </Surface>
+      </section>
+
+      <section className="container-px mx-auto max-w-7xl mt-24">
+        <Surface tone="default">
+          <SectionHeading
+            eyebrow="Coaches + Agents"
+            title="Built for human mentors and their AI counterparts"
+            description="Give AI architects, avatar ops leads, and ritual keepers a command center that mirrors how they search, decide, and deploy." 
+            actions={[{ href: "/docs/portal", label: "Explore portal playbook" }]}
+          />
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="text-sm font-semibold">AI Architect Coaches</div>
+              <p className="mt-2 text-xs text-neutral-300">Design triad programs, automate intake, and track body-mind-soul outcomes.</p>
+              <BulletList
+                items={[
+                  { label: "Keyword focus: AI coaching platform", detail: "Outcome-driven positioning" },
+                  { label: "Resource: Trinity Command", detail: "Live dashboard tour" },
+                  { label: "CTA: Launch 7/30/90 plan", detail: "Rapid program scaffolding" }
+                ]}
+              />
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="text-sm font-semibold">Avatar Operations Leads</div>
+              <p className="mt-2 text-xs text-neutral-300">Route briefs to HeyGen, ElevenLabs, and LangGraph automations with confidence.</p>
+              <BulletList
+                items={[
+                  { label: "Keyword focus: AI avatar coach", detail: "Capabilities & workflows" },
+                  { label: "Resource: Agent Library", detail: "Ops-ready YAML specs" },
+                  { label: "CTA: Deploy automation playbook", detail: "Map flows into pods" }
+                ]}
+              />
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="text-sm font-semibold">Brotherhood Guides</div>
+              <p className="mt-2 text-xs text-neutral-300">Align rituals, honors, and token incentives with transparent metrics.</p>
+              <BulletList
+                items={[
+                  { label: "Keyword focus: tokenized accountability", detail: "Treasury + honors" },
+                  { label: "Resource: Brotherhood portal", detail: "Milestones & incentives" },
+                  { label: "CTA: Download ritual scripts", detail: "Keep ceremonies consistent" }
+                ]}
+              />
+            </div>
+          </div>
+        </Surface>
+      </section>
+
+      <section className="container-px mx-auto max-w-7xl mt-24 grid gap-8 xl:grid-cols-[1.3fr_1fr]">
+        <Surface tone="default">
+          <SectionHeading
+            eyebrow="Learning OS"
+            title="Programs crafted for the Brotherhood"
+            description="Every module braids rituals, AI automations, and human check-ins so transformation sticks."
+            actions={[{ href: "/learn", label: "See full catalog" }]}
+          />
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {learningModules.slice(0, 4).map((module) => (
+              <div key={module.id} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div className="flex items-center justify-between">
+                  <div className="text-sm font-semibold">{module.title}</div>
+                  <Pill tone="warning">{module.duration}</Pill>
+                </div>
+                <p className="mt-2 text-sm text-neutral-300">{module.outcome}</p>
+                <div className="mt-3 text-xs text-neutral-400">Format: {module.format}</div>
+                <div className="mt-4 text-xs text-neutral-400">
+                  Ritual anchors:
+                  <ul className="mt-1 list-disc pl-4 space-y-1 text-neutral-300">
+                    {module.rituals.slice(0, 3).map((ritual) => (
+                      <li key={ritual}>{ritual}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Surface>
+        <Surface tone="default">
+          <SectionHeading
+            eyebrow="Ecosystem"
+            title="Tokens & integrations"
+            description="Transparency, incentives, and connective tissue for the decentralized Brotherhood."
+            actions={[{ href: "/hub", label: "Open Coach HQ" }]}
+          />
+          <div className="mt-6 grid gap-4">
+            {contributionPrograms.slice(0, 2).map((program) => (
+              <div key={program.id} className="rounded-xl border border-white/10 bg-white/5 p-4">
+                <div className="flex items-center justify-between">
+                  <div className="text-sm font-semibold">{program.title}</div>
+                  <Pill tone="warning">{program.reward}</Pill>
+                </div>
+                <p className="mt-2 text-xs text-neutral-300">{program.summary}</p>
+              </div>
+            ))}
+            <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+              <div className="text-sm font-semibold">Toolchain pulses</div>
+              <p className="mt-2 text-xs text-neutral-300">Connect the Trinity OS with creative, biometric, and finance rails.</p>
+              <ul className="mt-3 grid gap-2 text-xs text-neutral-300">
+                {toolIntegrations.slice(0, 4).map((tool) => (
+                  <li key={tool.id} className="rounded-lg border border-white/5 bg-white/5 px-3 py-2">
+                    <span className="font-medium text-white">{tool.title}</span>
+                    <span className="ml-2 text-neutral-400">{tool.actions[0]}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </Surface>
+      </section>
+
+      <section className="container-px mx-auto max-w-7xl mt-24">
+        <Surface tone="default">
+          <SectionHeading
+            eyebrow="Automation"
+            title="Featured playbooks"
+            description="Scale with proven automations for onboarding, content, and ritual reminders."
+            actions={[{ href: "/hub", label: "Open Coach Hub" }]}
+          />
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {automationPlaybooks.map((playbook) => (
+              <div key={playbook.id} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div className="flex items-center justify-between">
+                  <div className="text-sm font-semibold">{playbook.title}</div>
+                  <Pill>{playbook.ownerAvatar}</Pill>
+                </div>
+                <p className="mt-2 text-xs text-neutral-300">{playbook.problem}</p>
+                <ol className="mt-3 list-decimal space-y-1 pl-4 text-xs text-neutral-200">
+                  {playbook.flow.slice(0, 4).map((step) => (
+                    <li key={step}>{step}</li>
+                  ))}
+                </ol>
+              </div>
+            ))}
+          </div>
+        </Surface>
+      </section>
+
+      <section className="container-px mx-auto max-w-7xl mt-24">
+        <Surface tone="default">
+          <SectionHeading
+            eyebrow="Questions"
+            title="FAQ: launching TrinityAI"
+            description="Answers to the highest-intent queries coaches and AI agents ask before deployment."
+            actions={[{ href: "/docs/deployment", label: "Deployment guide" }]}
+          />
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {faq.map((item) => (
+              <div key={item.q} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div className="text-sm font-semibold text-white">{item.q}</div>
+                <p className="mt-2 text-sm text-neutral-300">{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </Surface>
+      </section>
     </main>
   );
 }
@@ -124,3 +326,22 @@ function Feature({ icon, title, desc }: { icon: React.ReactNode; title: string; 
     </div>
   );
 }
+
+const faq = [
+  {
+    q: "Which APIs do I configure on Vercel?",
+    a: "Set `OPENAI_API_KEY` for live conversations now and prepare `DATABASE_URL`, `NEXTAUTH_SECRET`, and billing keys for upcoming phases."
+  },
+  {
+    q: "How do AI avatars access workflows?",
+    a: "Agent YAML files define capabilities and map to automation playbooks so your bots can call Trinity Command, Hub, and external tools."
+  },
+  {
+    q: "Can I track Body, Mind, Soul outcomes in one place?",
+    a: "The Trinity Command dashboard merges Momentum Score, Soul Coherence, and Leverage Index—fed by check-ins, journals, and wearables."
+  },
+  {
+    q: "How does tokenized accountability work?",
+    a: "Brotherhood honors and contribution bounties mint rewards through the token treasury, with transparent milestones inside the dashboard."
+  }
+];

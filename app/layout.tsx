@@ -54,14 +54,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <img alt="Trinity" src="/brand/icon.svg" className="h-5 w-5" />
                 <span>© {new Date().getFullYear()} Trinity AI</span>
               </div>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <Link href="/" className="hover:text-white">Home</Link>
-                <Link href="/app" className="hover:text-white">Dashboard</Link>
-                <Link href="/app/coach" className="hover:text-white">Coach</Link>
+                <Link href="/app" className="hover:text-white">Trinity Command</Link>
+                <Link href="/hub" className="hover:text-white">Coach Hub</Link>
+                <Link href="/docs/portal" className="hover:text-white">Portal Playbook</Link>
+                <Link href="/docs" className="hover:text-white">Docs</Link>
                 <Link href="/learn" className="hover:text-white">Learn</Link>
                 <Link href="/faq" className="hover:text-white">FAQ</Link>
-                <Link href="/legal/safety" className="hover:text-white">Safety</Link>
-                <a href="https://github.com/" className="hover:text-white" target="_blank">GitHub</a>
+                <Link href="/roadmap" className="hover:text-white">Roadmap</Link>
+                <a href="https://github.com/frankxai/trinityaicoaching" className="hover:text-white" target="_blank" rel="noreferrer">GitHub</a>
               </div>
             </div>
           </footer>
