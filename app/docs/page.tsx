@@ -7,6 +7,7 @@ const links = [
   { href: "/docs/deployment", label: "Deployment" },
   { href: "/docs/mcp", label: "MCP Server" },
   { href: "/docs/portal", label: "Portal Playbook" },
+  { href: "/docs/experience", label: "Coach & Agent Experience" },
   { href: "/docs/seo", label: "SEO Strategy" },
   { href: "/docs/skool", label: "Skool Assets" },
 ];

@@ -12,6 +12,7 @@
   - Automation playbooks, tool integrations, contribution bounties, momentum metrics, and milestones.
 - `components/ui/primitives.tsx` provides consistent surfaces (SectionHeading, Surface, Pill, StatBlock, BulletList).
 - Product + marketing read from the same definitions → no drift in copy or naming.
+- `docs/COACH-AGENT-EXPERIENCE.md` maps personas, search flows, and KPI targets for coaches and AI agents.
 
 ## Avatar Roster (sample)
 - **Ahmad Prime** – Integrative strategist orchestrating the full journey.

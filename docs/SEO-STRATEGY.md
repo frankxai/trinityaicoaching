@@ -40,6 +40,7 @@
 - Structured data – Maintain JSON-LD for organization plus future product schema; expose key properties for AI ingestion.
 - Actionable CTAs for agents – Include command verbs such as Generate, Deploy, Mint so coach automations can map actions easily.
 - Token and ritual transparency – Surface quantifiable metrics (Momentum Score, Soul Coherence) above the fold for trust.
+- Experience alignment – Mirror the personas and flows documented in COACH-AGENT-EXPERIENCE.md so messaging and IA stay in sync.
 
 ## Navigation & Sitemap Enhancements
 - Primary nav anchors: Home, App (Trinity Command), Hub, Agents, Learn, Docs, Pricing, Roadmap.

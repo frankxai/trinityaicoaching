@@ -3,6 +3,57 @@ import { BrainCircuit, HeartHandshake, Activity, ShieldCheck, Sparkles } from "l
 import { SectionHeading, Surface, Pill, BulletList } from "@/components/ui/primitives";
 import { avatarPersonas, learningModules, contributionPrograms, toolIntegrations, automationPlaybooks } from "@/lib/portalData";
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://trinityaicoaching.vercel.app";
+
+const faq = [
+  {
+    q: "Which APIs do I configure on Vercel?",
+    a: "Set `OPENAI_API_KEY` for live conversations now and prepare `DATABASE_URL`, `NEXTAUTH_SECRET`, and billing keys for upcoming phases."
+  },
+  {
+    q: "How do AI avatars access workflows?",
+    a: "Agent YAML files define capabilities and map to automation playbooks so your bots can call Trinity Command, Hub, and external tools."
+  },
+  {
+    q: "Can I track Body, Mind, Soul outcomes in one place?",
+    a: "The Trinity Command dashboard merges Momentum Score, Soul Coherence, and Leverage Index—fed by check-ins, journals, and wearables."
+  },
+  {
+    q: "How does tokenized accountability work?",
+    a: "Brotherhood honors and contribution bounties mint rewards through the token treasury, with transparent milestones inside the dashboard."
+  }
+];
+
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "TrinityAI Coaching Platform",
+  description:
+    "AI-augmented coaching portal combining Trinity Command, Coach Hub, avatar guild, automation playbooks, and tokenized Brotherhood incentives.",
+  brand: { "@type": "Brand", name: "Trinity AI" },
+  url: siteUrl,
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/PreOrder",
+    price: "0",
+    priceCurrency: "EUR"
+  },
+  isSimilarTo: ["AI coaching platform", "AI avatar coach", "tokenized accountability"]
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.a
+    }
+  }))
+};
+
 export const metadata = {
   title: "TrinityAI Coaching Portal | Body, Mind & Soul Command Center",
   description: "Launch AI-augmented coaching with Trinity Command, Coach Hub, avatar guild, automation playbooks, and tokenized Brotherhood incentives.",
@@ -20,6 +71,8 @@ export const metadata = {
 export default function Page() {
   return (
     <main>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <section className="relative">
         <div className="absolute inset-0 bg-grid bg-[length:24px_24px] opacity-[0.15]" />
         <div className="container-px mx-auto max-w-7xl pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-32 lg:pb-36">
@@ -326,22 +379,3 @@ function Feature({ icon, title, desc }: { icon: React.ReactNode; title: string; 
     </div>
   );
 }
-
-const faq = [
-  {
-    q: "Which APIs do I configure on Vercel?",
-    a: "Set `OPENAI_API_KEY` for live conversations now and prepare `DATABASE_URL`, `NEXTAUTH_SECRET`, and billing keys for upcoming phases."
-  },
-  {
-    q: "How do AI avatars access workflows?",
-    a: "Agent YAML files define capabilities and map to automation playbooks so your bots can call Trinity Command, Hub, and external tools."
-  },
-  {
-    q: "Can I track Body, Mind, Soul outcomes in one place?",
-    a: "The Trinity Command dashboard merges Momentum Score, Soul Coherence, and Leverage Index—fed by check-ins, journals, and wearables."
-  },
-  {
-    q: "How does tokenized accountability work?",
-    a: "Brotherhood honors and contribution bounties mint rewards through the token treasury, with transparent milestones inside the dashboard."
-  }
-];

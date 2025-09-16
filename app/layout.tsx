@@ -1,11 +1,13 @@
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://trinityaicoaching.vercel.app";
+
 export const metadata = {
   title: "Trinity AI Coaching Platform",
   description: "Transform body, mind, and soul with AI-aligned coaching.",
-  metadataBase: new URL("https://trinityaicoaching.vercel.app"),
+  metadataBase: new URL(siteUrl),
   openGraph: {
     title: "Trinity AI Coaching Platform",
     description: "Transform body, mind, and soul with AI-aligned coaching.",
-    url: "https://trinityaicoaching.vercel.app",
+    url: siteUrl,
     images: [
       { url: "/og.svg", width: 1200, height: 630, alt: "Trinity AI" }
     ],
@@ -29,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           '@context': 'https://schema.org',
           '@type': 'Organization',
           name: 'Trinity AI',
-          url: 'https://trinityaicoaching.vercel.app',
+          url: siteUrl,
           sameAs: ['https://github.com/frankxai/trinityaicoaching']
         })}</Script>
         <div className="min-h-screen bg-hero bg-no-repeat bg-top">
