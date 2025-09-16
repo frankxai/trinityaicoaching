@@ -8,7 +8,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://trinityaicoaching.v
 const faq = [
   {
     q: "Which APIs do I configure on Vercel?",
-    a: "Set `OPENAI_API_KEY` for live conversations now and prepare `DATABASE_URL`, `NEXTAUTH_SECRET`, and billing keys for upcoming phases."
+    a: "Set `OPENAI_API_KEY` for live conversations now, add `NEXT_PUBLIC_SITE_URL`, and review `/docs/vercel-env` for database, auth, and billing keys as you scale."
   },
   {
     q: "How do AI avatars access workflows?",
@@ -21,6 +21,46 @@ const faq = [
   {
     q: "How does tokenized accountability work?",
     a: "Brotherhood honors and contribution bounties mint rewards through the token treasury, with transparent milestones inside the dashboard."
+  },
+  {
+    q: "Where can my team access the search blueprint?",
+    a: "Point strategists and AI operators to `/docs/search-blueprint` and the `/coaches` hub for keywords, interlinking, and launch checklists."
+  }
+];
+
+const searchSignals = [
+  {
+    term: "AI coaching platform",
+    intent: "Orient",
+    route: "Hero and /coaches establish the Trinity Command positioning."
+  },
+  {
+    term: "Trinity command dashboard",
+    intent: "Design",
+    route: "Deep-link visitors to /app and /docs/portal for capability details."
+  },
+  {
+    term: "AI avatar coach workflows",
+    intent: "Scale",
+    route: "Connect /agents, /hub, and /docs/search-blueprint to demonstrate automation pods."
+  }
+];
+
+const searchResources = [
+  {
+    title: "Coach & AI Search Blueprint",
+    description: "Persona-level keyword journeys and interlinking loops for humans and agents.",
+    href: "/docs/search-blueprint"
+  },
+  {
+    title: "Vercel Environment Setup",
+    description: "Step-by-step instructions for configuring OPENAI_API_KEY and other keys on Vercel.",
+    href: "/docs/vercel-env"
+  },
+  {
+    title: "Trinity for Coaches",
+    description: "Dedicated hub showing how mentors and AI operators deploy Trinity Command.",
+    href: "/coaches"
   }
 ];
 
@@ -64,7 +104,10 @@ export const metadata = {
     "AI avatar coach",
     "tokenized accountability",
     "body mind soul coaching",
-    "brotherhood honors"
+    "brotherhood honors",
+    "coach search blueprint",
+    "vercel environment setup",
+    "coach intake automation"
   ]
 };
 
@@ -94,10 +137,11 @@ export default function Page() {
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link href="/app" className="rounded-md bg-brand-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-brand-600 transition">Open Dashboard</Link>
+              <Link href="/coaches" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Coaches Hub</Link>
               <Link href="/app/coach" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Try Coach</Link>
               <Link href="/app/super-agent" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Super Agent</Link>
               <Link href="/app/get-started" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Get Started</Link>
-              <Link href="/blog" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Read the vision</Link>
+              <Link href="/docs/search-blueprint" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Search Blueprint</Link>
             </div>
           </div>
         </div>
@@ -248,6 +292,50 @@ export default function Page() {
                   { label: "CTA: Download ritual scripts", detail: "Keep ceremonies consistent" }
                 ]}
               />
+            </div>
+          </div>
+        </Surface>
+      </section>
+
+      <section className="container-px mx-auto max-w-7xl mt-24">
+        <Surface tone="default">
+          <SectionHeading
+            eyebrow="Search Intelligence"
+            title="Optimised for how coaches and agents search"
+            description="Map high-intent keywords to the right surfaces so mentors, ops leads, and LLM agents land where they can act."
+            actions={[
+              { href: "/docs/search-blueprint", label: "View blueprint" },
+              { href: "/docs/vercel-env", label: "Vercel checklist" }
+            ]}
+          />
+          <div className="mt-6 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+            <div className="grid gap-3 md:grid-cols-3">
+              {searchSignals.map((signal) => {
+                const tone: "default" | "success" | "warning" =
+                  signal.intent === "Design" ? "success" : signal.intent === "Scale" ? "default" : "warning";
+                return (
+                  <div key={signal.term} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <div className="text-sm font-semibold text-white">{signal.term}</div>
+                    <div className="mt-3">
+                      <Pill tone={tone}>{signal.intent}</Pill>
+                    </div>
+                    <p className="mt-3 text-xs text-neutral-300">{signal.route}</p>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="grid gap-3">
+              {searchResources.map((resource) => (
+                <Link
+                  key={resource.title}
+                  href={resource.href}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/10"
+                >
+                  <div className="text-sm font-semibold text-white">{resource.title}</div>
+                  <p className="mt-2 text-sm text-neutral-300">{resource.description}</p>
+                  <span className="mt-3 inline-flex text-xs text-brand-200">Open →</span>
+                </Link>
+              ))}
             </div>
           </div>
         </Surface>

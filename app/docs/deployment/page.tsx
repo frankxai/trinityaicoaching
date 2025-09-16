@@ -1,13 +1,18 @@
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { MarkdownDoc } from "@/components/MarkdownDoc";
+
+export const metadata = {
+  title: "Deployment | TrinityAI",
+  description: "Steps for launching TrinityAI locally and on Vercel with the correct environment variables.",
+};
 
 export default function DeploymentDoc() {
-  const raw = readFileSync(resolve(process.cwd(), "docs/DEPLOYMENT.md"), "utf8");
   return (
-    <div className="glass rounded-2xl p-6">
-      <h1 className="text-xl font-semibold mb-4">Deployment</h1>
-      <pre className="whitespace-pre-wrap text-sm text-neutral-200">{raw}</pre>
-    </div>
+    <MarkdownDoc
+      file="docs/DEPLOYMENT.md"
+      eyebrow="Launch Guide"
+      title="Deployment"
+      description="Follow the Vercel, local, and GitHub deployment steps plus environment variable requirements."
+    />
   );
 }
 

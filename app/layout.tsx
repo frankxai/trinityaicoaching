@@ -60,7 +60,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Link href="/" className="hover:text-white">Home</Link>
                 <Link href="/app" className="hover:text-white">Trinity Command</Link>
                 <Link href="/hub" className="hover:text-white">Coach Hub</Link>
+                <Link href="/coaches" className="hover:text-white">Coaches</Link>
                 <Link href="/docs/portal" className="hover:text-white">Portal Playbook</Link>
+                <Link href="/docs/vercel-env" className="hover:text-white">Vercel Setup</Link>
                 <Link href="/docs" className="hover:text-white">Docs</Link>
                 <Link href="/learn" className="hover:text-white">Learn</Link>
                 <Link href="/faq" className="hover:text-white">FAQ</Link>

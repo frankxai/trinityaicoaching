@@ -1,13 +1,18 @@
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { MarkdownDoc } from "@/components/MarkdownDoc";
+
+export const metadata = {
+  title: "API Reference | TrinityAI",
+  description: "Endpoints, payloads, and usage patterns for TrinityAI chat, plans, and metrics.",
+};
 
 export default function APIDoc() {
-  const raw = readFileSync(resolve(process.cwd(), "docs/API.md"), "utf8");
   return (
-    <div className="glass rounded-2xl p-6">
-      <h1 className="text-xl font-semibold mb-4">API</h1>
-      <pre className="whitespace-pre-wrap text-sm text-neutral-200">{raw}</pre>
-    </div>
+    <MarkdownDoc
+      file="docs/API.md"
+      eyebrow="Developer Docs"
+      title="API Reference"
+      description="Connect external systems and AI agents to Trinity Command using documented REST endpoints."
+    />
   );
 }
 
