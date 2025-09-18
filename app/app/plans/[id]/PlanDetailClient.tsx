@@ -120,7 +120,7 @@ export function PlanDetailClient({ id }: { id: string }) {
     return (
       <main className="container-px mx-auto max-w-6xl py-16">
         <Surface tone="default">
-          <p className="text-sm text-neutral-300">Loading plan…</p>
+          <p className="text-sm text-neutral-300">Loading plan...</p>
         </Surface>
       </main>
     );
