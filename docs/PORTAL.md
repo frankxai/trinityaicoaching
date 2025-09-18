@@ -15,11 +15,11 @@
 - `docs/COACH-AGENT-EXPERIENCE.md` maps personas, search flows, and KPI targets for coaches and AI agents.
 
 ## Avatar Roster (sample)
-- **Ahmad Prime** – Integrative strategist orchestrating the full journey.
-- **Ahmad Athlete** – Body archetype focused on strength, conditioning, and breath.
-- **Ahmad Sage** – Soul mystic guiding numerology, rituals, and ceremonies.
-- **Ahmad Tactician** – Mind operator optimising leverage and automations.
-- **Ahmad Guardian** – Operations sentinel ensuring integrity and compliance.
+- **Trinity Prime** – Integrative strategist orchestrating the full journey.
+- **Trinity Athlete** – Body archetype focused on strength, conditioning, and breath.
+- **Trinity Sage** – Soul mystic guiding numerology, rituals, and ceremonies.
+- **Trinity Tactician** – Mind operator optimising leverage and automations.
+- **Trinity Guardian** – Operations sentinel ensuring integrity and compliance.
 
 ## Module Tracks
 - Embodied Strength Foundation (Body) – 30 day hybrid programme.

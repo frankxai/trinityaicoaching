@@ -224,7 +224,7 @@ export default function Page() {
           <SectionHeading
             eyebrow="Avatar Guild"
             title="Meet the Trinity squad"
-            description="Five Ahmad avatars cover every mode: Body, Mind, Soul, Integrative, and Operations. Choose the energy you need and let the system do the rest."
+            description="Five Trinity avatars cover every mode: Body, Mind, Soul, Integrative, and Operations. Choose the energy you need and let the system do the rest."
             actions={[{ href: "/agents", label: "Browse agent files" }]}
           />
           <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">

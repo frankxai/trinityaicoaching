@@ -43,7 +43,7 @@ const heroMetrics = [
   { label: "Leverage", value: "74", delta: "Hold", trend: "flat" as const }
 ];
 
-const assignedAvatars = avatarPersonas.filter((avatar) => ["ahmad-prime", "ahmad-athlete", "ahmad-sage"].includes(avatar.id));
+const assignedAvatars = avatarPersonas.filter((avatar) => ["trinity-prime", "trinity-athlete", "trinity-sage"].includes(avatar.id));
 
 const surfaces = platformSurfaces.filter((surface) => ["dashboard", "coach-directory", "brotherhood-portal"].includes(surface.id));
 

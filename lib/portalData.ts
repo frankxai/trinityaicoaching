@@ -18,8 +18,8 @@ export type AvatarPersona = {
 
 export const avatarPersonas: AvatarPersona[] = [
   {
-    id: "ahmad-prime",
-    name: "Ahmad Prime",
+    id: "trinity-prime",
+    name: "Trinity Prime",
     archetype: "Integrative",
     mood: "Warm strategist",
     tagline: "Orchestrates the whole journey with calm precision.",
@@ -37,8 +37,8 @@ export const avatarPersonas: AvatarPersona[] = [
     ]
   },
   {
-    id: "ahmad-athlete",
-    name: "Ahmad Athlete",
+    id: "trinity-athlete",
+    name: "Trinity Athlete",
     archetype: "Body",
     mood: "Explosive hype coach",
     tagline: "Demands embodied action and disciplined recovery.",
@@ -56,8 +56,8 @@ export const avatarPersonas: AvatarPersona[] = [
     ]
   },
   {
-    id: "ahmad-sage",
-    name: "Ahmad Sage",
+    id: "trinity-sage",
+    name: "Trinity Sage",
     archetype: "Soul",
     mood: "Quiet mystic",
     tagline: "Anchors clients in meaning, numerology, and cosmology.",
@@ -75,8 +75,8 @@ export const avatarPersonas: AvatarPersona[] = [
     ]
   },
   {
-    id: "ahmad-tactician",
-    name: "Ahmad Tactician",
+    id: "trinity-tactician",
+    name: "Trinity Tactician",
     archetype: "Mind",
     mood: "Sharp operator",
     tagline: "Systems thinker that eradicates friction and builds leverage.",
@@ -94,8 +94,8 @@ export const avatarPersonas: AvatarPersona[] = [
     ]
   },
   {
-    id: "ahmad-guardian",
-    name: "Ahmad Guardian",
+    id: "trinity-guardian",
+    name: "Trinity Guardian",
     archetype: "Operations",
     mood: "Calm sentinel",
     tagline: "Keeps integrity, compliance, and trust across the ecosystem.",
@@ -291,7 +291,7 @@ export const contributionPrograms: ContributionProgram[] = [
     summary: "Design and ship AI agent modules that automate client onboarding workflows.",
     reward: "400 Trinity tokens + Brotherhood Honors patch",
     proof: ["Repo PR merged", "Agent QA video", "Client result testimonial"],
-    owner: "Ahmad Tactician"
+    owner: "Trinity Tactician"
   },
   {
     id: "brotherhood-rituals",
@@ -299,7 +299,7 @@ export const contributionPrograms: ContributionProgram[] = [
     summary: "Host weekly fire calls and capture highlights into the community library.",
     reward: "250 Trinity tokens + ritual keeper badge",
     proof: ["Call recording", "Ritual recap", "Attendance streak"],
-    owner: "Ahmad Sage"
+    owner: "Trinity Sage"
   },
   {
     id: "biometric-ops",
@@ -307,7 +307,7 @@ export const contributionPrograms: ContributionProgram[] = [
     summary: "Integrate wearable data streams and monitor for accountability flags.",
     reward: "300 Trinity tokens + operations honor",
     proof: ["Alert playbook", "Dashboard update", "Integrity report"],
-    owner: "Ahmad Guardian"
+    owner: "Trinity Guardian"
   }
 ];
 
@@ -448,21 +448,21 @@ export const journeyMilestones: JourneyMilestone[] = [
     title: "Initiation", 
     description: "Brother completes intake, avatar matching, and first ritual.",
     signals: ["Intake complete", "Avatar assigned", "First check-in"],
-    celebrants: ["Ahmad Prime", "Brotherhood circle"]
+    celebrants: ["Trinity Prime", "Brotherhood circle"]
   },
   {
     id: "ascension",
     title: "Ascension",
     description: "Momentum score stays green for 4 consecutive weeks.",
     signals: ["Momentum >= 80", "Token honors minted"],
-    celebrants: ["Ahmad Sage", "Community guardian"]
+    celebrants: ["Trinity Sage", "Community guardian"]
   },
   {
     id: "integration",
     title: "Integration",
     description: "Triad Mastery Intensive graduate leads a cohort mission.",
     signals: ["Capstone shipped", "Brotherhood votes"],
-    celebrants: ["Ahmad Guardian", "Founders"]
+    celebrants: ["Trinity Guardian", "Founders"]
   }
 ];
 
@@ -486,7 +486,7 @@ export const automationPlaybooks: AutomationPlaybook[] = [
       "HeyGen avatar records vertical video",
       "Zapier syndicates to channels with context"
     ],
-    ownerAvatar: "Ahmad Tactician",
+    ownerAvatar: "Trinity Tactician",
     tools: ["Notion", "Claude", "HeyGen", "Zapier"]
   },
   {
@@ -496,10 +496,10 @@ export const automationPlaybooks: AutomationPlaybook[] = [
     flow: [
       "Landing page funnels to intake agent",
       "Agent populates CRM + token wallet",
-      "Ahmad Prime reviews baseline dashboard",
+      "Trinity Prime reviews baseline dashboard",
       "Welcome ritual scheduled automatically"
     ],
-    ownerAvatar: "Ahmad Guardian",
+    ownerAvatar: "Trinity Guardian",
     tools: ["Typeform", "HubSpot", "Ledger"]
   },
   {
@@ -512,7 +512,7 @@ export const automationPlaybooks: AutomationPlaybook[] = [
       "Suno track plays + ElevenLabs narration",
       "Check-in auto-updates streak"
     ],
-    ownerAvatar: "Ahmad Sage",
+    ownerAvatar: "Trinity Sage",
     tools: ["Whoop", "Custom Jarvis", "Suno", "ElevenLabs"]
   }
 ];
