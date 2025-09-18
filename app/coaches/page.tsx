@@ -25,7 +25,7 @@ const coachSegments = [
     keywords: ["ai coaching platform", "body mind soul coaching"],
     actions: [
       { label: "Launch Trinity Command", href: "/app" },
-      { label: "Read Portal Playbook", href: "/docs/portal" }
+      { label: "Open Knowledgebase", href: "https://github.com/frankxai/trinityaicoaching/blob/main/Trinity%20AI%20Knowledgebase.md", external: true }
     ],
     bulletItems: [
       { label: "Programs", detail: "Activate 7/30/90 day plan generator with your own protocols." },
@@ -42,7 +42,7 @@ const coachSegments = [
       { label: "Deploy Automation Playbooks", href: "/hub" }
     ],
     bulletItems: [
-      { label: "Agent spec", detail: "Standardise persona YAMLs and toolchains from `agents/`." },
+      { label: "Agent spec", detail: "Standardise persona YAMLs and toolchains from agents/." },
       { label: "Ops pods", detail: "Route briefs into automation pods with safeguards." },
       { label: "Search signal", detail: "Capture 'AI avatar coach workflows' traffic." }
     ]
@@ -53,7 +53,7 @@ const coachSegments = [
     keywords: ["tokenized accountability", "brotherhood honors"],
     actions: [
       { label: "Review Methods", href: "/methods" },
-      { label: "Plan Ceremonies", href: "/docs/portal" }
+      { label: "Plan Retreat Rituals", href: "/retreat" }
     ],
     bulletItems: [
       { label: "Ritual cadence", detail: "Keep ceremonies aligned with soul numerology calendars." },
@@ -69,29 +69,29 @@ const launchChecklist = [
     icon: <Radar className="h-5 w-5" />,
     items: [
       { label: "Download persona YAMLs", detail: "Ensure Body/Mind/Soul agents match your brand voice." },
-      { label: "Sync environment variables", detail: "Follow `/docs/vercel-env` for OpenAI and site URL." }
+      { label: "Sync environment variables", detail: "Use the Knowledgebase deployment checklist for OpenAI keys and site URL." }
     ]
   },
   {
     title: "Activate",
     icon: <Workflow className="h-5 w-5" />,
     items: [
-      { label: "Launch Trinity Command", detail: "Invite coaches into `/app` to generate first plans." },
-      { label: "Publish coach intake", detail: "Embed `/app/get-started` in funnels or Skool." }
+      { label: "Launch Trinity Command", detail: "Invite coaches into /app to generate first plans." },
+      { label: "Publish coach intake", detail: "Embed /app/get-started in funnels or Skool." }
     ]
   },
   {
     title: "Scale",
     icon: <Network className="h-5 w-5" />,
     items: [
-      { label: "Automate rituals", detail: "Trigger check-ins and honors via `/hub` playbooks." },
-      { label: "Measure demand", detail: "Track keyword conversions in `/docs/search-blueprint`." }
+      { label: "Automate rituals", detail: "Trigger check-ins and honors via /hub playbooks." },
+      { label: "Measure demand", detail: "Track keyword conversions documented in the Knowledgebase growth section." }
     ]
   }
 ];
 
 export default function CoachesPage() {
-  const featuredPersonas = avatarPersonas.filter((persona) => ["ahmad-prime", "ahmad-tactician", "ahmad-guardian"].includes(persona.id));
+  const featuredPersonas = avatarPersonas.filter((persona) => ["trinity-prime", "trinity-tactician", "trinity-guardian"].includes(persona.id));
   const focusModules = learningModules.filter((module) => ["body-foundation", "mind-ops", "soul-ascension"].includes(module.id));
   const featuredPlaybooks = automationPlaybooks.slice(0, 3);
 
@@ -105,8 +105,8 @@ export default function CoachesPage() {
             description="Give human mentors and AI agents one shared operating system—from intake to honors—with search-first navigation."
             actions={[
               { href: "/app/get-started", label: "Start intake" },
-              { href: "/docs/search-blueprint", label: "Search blueprint" },
-              { href: "/docs/vercel-env", label: "Vercel setup" }
+              { href: "https://github.com/frankxai/trinityaicoaching/blob/main/Trinity%20AI%20Knowledgebase.md", label: "Knowledgebase", external: true },
+              { href: "https://github.com/frankxai/trinityaicoaching/blob/main/Agent.md", label: "Agent guide", external: true }
             ]}
           />
           <div className="mt-6 grid gap-6 md:grid-cols-3">
@@ -120,14 +120,26 @@ export default function CoachesPage() {
                 <BulletList items={segment.bulletItems} />
                 <div className="mt-4 flex flex-wrap gap-2">
                   {segment.actions.map((action) => (
-                    <Link
-                      key={action.href}
+                  action.external ? (
+                    <a
+                      key={action.label}
                       href={action.href}
-                      className="inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/10 px-3 py-1.5 text-xs font-medium text-white hover:bg-white/20"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs font-medium text-white hover:bg-white/20"
+                    >
+                      {action.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={action.label}
+                      href={action.href}
+                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs font-medium text-white hover:bg-white/20"
                     >
                       {action.label}
                     </Link>
-                  ))}
+                  )
+                ))}
                 </div>
               </Surface>
             ))}
@@ -259,31 +271,49 @@ export default function CoachesPage() {
             {[
               {
                 title: "Configure Vercel",
-                description: "Set `OPENAI_API_KEY` and `NEXT_PUBLIC_SITE_URL` so AI responses stream live.",
-                href: "/docs/vercel-env"
+                description: "Set OPENAI_API_KEY and NEXT_PUBLIC_SITE_URL so AI responses stream live.",
+                href: "https://github.com/frankxai/trinityaicoaching/blob/main/Trinity%20AI%20Knowledgebase.md",
+                external: true
               },
               {
                 title: "Brief your agents",
-                description: "Share the Agent Library and Search Blueprint with your AI ops team.",
-                href: "/docs/search-blueprint"
+                description: "Share the Agent Library and Agent Operations Guide with your AI ops team.",
+                href: "https://github.com/frankxai/trinityaicoaching/blob/main/Agent.md",
+                external: true
               },
               {
                 title: "Invite the brotherhood",
-                description: "Route clients into `/app/get-started` and celebrate honors inside Coach Hub.",
+                description: "Route clients into /app/get-started and celebrate honors inside Coach Hub.",
                 href: "/hub"
               }
             ].map((card) => (
-              <Link
-                key={card.title}
-                href={card.href}
-                className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/10"
-              >
-                <div className="flex items-center gap-2 text-sm font-semibold text-white">
-                  <CheckCircle2 className="h-4 w-4 text-brand-300" />
-                  {card.title}
-                </div>
-                <p className="mt-2 text-sm text-neutral-300">{card.description}</p>
-              </Link>
+              card.external ? (
+                <a
+                  key={card.title}
+                  href={card.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/10"
+                >
+                  <div className="flex items-center gap-2 text-sm font-semibold text-white">
+                    <CheckCircle2 className="h-4 w-4 text-brand-300" />
+                    {card.title}
+                  </div>
+                  <p className="mt-2 text-sm text-neutral-300">{card.description}</p>
+                </a>
+              ) : (
+                <Link
+                  key={card.title}
+                  href={card.href}
+                  className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/10"
+                >
+                  <div className="flex items-center gap-2 text-sm font-semibold text-white">
+                    <CheckCircle2 className="h-4 w-4 text-brand-300" />
+                    {card.title}
+                  </div>
+                  <p className="mt-2 text-sm text-neutral-300">{card.description}</p>
+                </Link>
+              )
             ))}
           </div>
         </Surface>
@@ -291,3 +321,5 @@ export default function CoachesPage() {
     </main>
   );
 }
+
+

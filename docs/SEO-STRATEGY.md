@@ -2,9 +2,9 @@
 
 ## Companion Blueprint
 
-- Read `/docs/search-blueprint` for persona-specific keyword journeys, interlinking loops, and measurement KPIs.
-- Use `/docs/vercel-env` to answer the high-intent "which API keys do I set on Vercel?" query surfaced in hero FAQ.
-- Keep `/docs/seo` as the canonical playbook for messaging pillars while the blueprint handles execution details.
+- Read `Knowledgebase → Search Blueprint` for persona-specific keyword journeys, interlinking loops, and measurement KPIs.
+- Use `Knowledgebase → Environment & Keys` to answer the high-intent "which API keys do I set on Vercel?" query surfaced in hero FAQ.
+- Keep `Knowledgebase → SEO Strategy` as the canonical playbook for messaging pillars while the blueprint handles execution details.
 
 ## Primary Personas
 - AI Architect Coach – runs multi-disciplinary coaching practices, searches for scalable frameworks, automation, and accountability systems. Needs proof of outcomes, operational clarity, and ways to productize expertise.
@@ -51,7 +51,7 @@
 ## Navigation & Sitemap Enhancements
 - Primary nav anchors: Home, Trinity Command (`/app`), Coach Hub (`/hub`), Coaches (`/coaches`), Agents (`/agents`), Learn, Docs, Pricing, Roadmap.
 - Secondary quick links in footer: Token Treasury, Brotherhood Portal, API Reference, Coach Intake, Support, Vercel Environment Setup.
-- Sitemap ensures canonical URLs across core routes (/, /coaches, /app, /app/coach, /app/plans, /app/get-started, /hub, /agents, /learn, /learn/[slug], /docs, /docs/[slug], /docs/search-blueprint, /docs/vercel-env, /blog, /blog/[slug], /roadmap, /pricing, /faq, /methods, /contact, /sign-in).
+- Sitemap ensures canonical URLs across core routes (/, /coaches, /app, /app/coach, /app/plans, /app/get-started, /hub, /agents, /learn, /learn/[slug], Knowledgebase, Knowledgebase/[slug], Knowledgebase → Search Blueprint, Knowledgebase → Environment & Keys, /blog, /blog/[slug], /roadmap, /pricing, /faq, /methods, /contact, /sign-in).
 
 ## Content Recommendations
 - Landing Page Sections: Avatar guild, module catalog, token incentives, automation playbooks, testimonials, and FAQ anchored around keywords above.

@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Trinity AI Roadmap Snapshot</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #04060c;
+      --card: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.12);
+      --text: rgba(255, 255, 255, 0.85);
+      --subtle: rgba(255, 255, 255, 0.6);
+      --accent: #5b9dff;
+      --done-bg: rgba(76, 201, 135, 0.18);
+      --progress-bg: rgba(246, 185, 59, 0.18);
+      --planned-bg: rgba(255, 255, 255, 0.14);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont;
+      background: radial-gradient(circle at top, rgba(91,157,255,0.2), transparent 60%), var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 48px 24px 72px;
+      display: flex;
+      justify-content: center;
+    }
+    main { width: min(1080px, 100%); }
+    header { display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    header h1 { font-size: clamp(28px, 3vw, 40px); margin: 0; letter-spacing: -0.02em; }
+    header p { margin: 0; color: var(--subtle); max-width: 720px; line-height: 1.6; }
+    .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .card { border: 1px solid var(--border); background: var(--card); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; min-height: 168px; }
+    .card-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .card-header h3 { margin: 0; font-size: 17px; font-weight: 600; }
+    .phase { font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--subtle); }
+    .desc { margin: 0; color: var(--subtle); font-size: 14px; line-height: 1.6; }
+    .status { align-self: flex-start; font-size: 12px; text-transform: uppercase; letter-spacing: 0.12em; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--border); background: var(--planned-bg); color: var(--text); }
+    .status[data-status='done'] { background: var(--done-bg); color: #7af0b7; }
+    .status[data-status='in-progress'] { background: var(--progress-bg); color: #f6b93b; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Trinity AI Roadmap Snapshot</h1>
+      <p>Internal reference view that mirrors the previous public roadmap. Update this HTML whenever milestones shift so the team keeps an artifact without exposing it in production.</p>
+    </header>
+    <section class="grid">
+
+        <article class="card">
+          <div class="card-header">
+            <h3>Landing + SaaS shell</h3>
+            <div class="phase">MVP</div>
+          </div>
+          <p class="desc">Marketing site + dashboard</p>
+          <div class="status" data-status="done">Done</div>
+        </article>
+    
+        <article class="card">
+          <div class="card-header">
+            <h3>Coach chat (triad)</h3>
+            <div class="phase">MVP</div>
+          </div>
+          <p class="desc">Body/Mind/Soul triad with synthesis</p>
+          <div class="status" data-status="done">Done</div>
+        </article>
+    
+        <article class="card">
+          <div class="card-header">
+            <h3>Plan generator 7/30/90</h3>
+            <div class="phase">MVP</div>
+          </div>
+          <p class="desc">Program creation + export</p>
+          <div class="status" data-status="done">Done</div>
+        </article>
+    
+        <article class="card">
+          <div class="card-header">
+            <h3>Journal + summaries</h3>
+            <div class="phase">MVP</div>
+          </div>
+          <p class="desc">Entries + weekly insights</p>
+          <div class="status" data-status="done">Done</div>
+        </article>
+    
+        <article class="card">
+          <div class="card-header">
+            <h3>Habits + streaks</h3>
+            <div class="phase">MVP</div>
+          </div>
+          <p class="desc">Local tracking + CSV</p>
+          <div class="status" data-status="done">Done</div>
+        </article>
+    
+        <article class="card">
+          <div class="card-header">
+            <h3>Check-ins + Weekly Review</h3>
+            <div class="phase">MVP</div>
+          </div>
+          <p class="desc">Active plan tasks + review</p>
+          <div class="status" data-status="done">Done</div>
+        </article>
+    
+        <article class="card">
+          <div class="card-header">
+            <h3>Agents library + YAML</h3>
+            <div class="phase">MVP</div>
+          </div>
+          <p class="desc">Personas for reuse + MCP</p>
+          <div class="status" data-status="done">Done</div>
+        </article>
+    
+        <article class="card">
+          <div class="card-header">
+            <h3>Vercel AI SDK streaming</h3>
+            <div class="phase">MVP</div>
+          </div>
+          <p class="desc">Super Agent streaming chat</p>
+          <div class="status" data-status="in-progress">In-Progress</div>
+        </article>
+    
+        <article class="card">
+          <div class="card-header">
+            <h3>Auth + billing</h3>
+            <div class="phase">SaaS</div>
+          </div>
+          <p class="desc">Clerk/Auth.js + Stripe</p>
+          <div class="status" data-status="planned">Planned</div>
+        </article>
+    
+        <article class="card">
+          <div class="card-header">
+            <h3>DB persistence</h3>
+            <div class="phase">SaaS</div>
+          </div>
+          <p class="desc">Supabase + Prisma</p>
+          <div class="status" data-status="planned">Planned</div>
+        </article>
+    
+        <article class="card">
+          <div class="card-header">
+            <h3>Uploads + triage</h3>
+            <div class="phase">SaaS</div>
+          </div>
+          <p class="desc">S3 + OCR + routing</p>
+          <div class="status" data-status="planned">Planned</div>
+        </article>
+    
+        <article class="card">
+          <div class="card-header">
+            <h3>Programs marketplace</h3>
+            <div class="phase">Marketplace</div>
+          </div>
+          <p class="desc">Listings + search + reviews</p>
+          <div class="status" data-status="planned">Planned</div>
+        </article>
+    
+        <article class="card">
+          <div class="card-header">
+            <h3>Agent orchestration</h3>
+            <div class="phase">Intelligence</div>
+          </div>
+          <p class="desc">Graph teams + memory</p>
+          <div class="status" data-status="planned">Planned</div>
+        </article>
+    
+    </section>
+  </main>
+</body>
+</html>
+

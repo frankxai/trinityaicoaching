@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { SectionHeading, Surface, Pill, BulletList } from "@/components/ui/primitives";
 import {
   avatarPersonas,
@@ -51,7 +51,7 @@ export default function HubHome() {
           eyebrow="Module Builder"
           title="Featured programs"
           description="Blend ritual, automation, and human coaching. Duplicate a base or design from scratch."
-          actions={[{ href: "/docs/portal", label: "Portal playbook" }]}
+          actions={[{ href: "https://github.com/frankxai/trinityaicoaching/blob/main/Trinity%20AI%20Knowledgebase.md", label: "Knowledgebase", external: true }]}
         />
         <div className="mt-5 grid gap-4 lg:grid-cols-3">
           {buildModules.map((module) => (
@@ -61,7 +61,7 @@ export default function HubHome() {
                 <Pill>{module.track}</Pill>
               </div>
               <p className="mt-2 text-xs text-neutral-300">{module.outcome}</p>
-              <div className="mt-3 text-xs text-neutral-400">Duration: {module.duration} · Format: {module.format}</div>
+              <div className="mt-3 text-xs text-neutral-400">Duration: {module.duration} Â· Format: {module.format}</div>
               <div className="mt-3 text-xs text-neutral-400">
                 Ritual anchors:
                 <ul className="mt-1 list-disc pl-4 space-y-1 text-neutral-300">
@@ -137,7 +137,7 @@ export default function HubHome() {
             eyebrow="Automation"
             title="Operational playbooks"
             description="Deploy AI agents across onboarding, content, and ritual reminders."
-            actions={[{ href: "/docs/portal", label: "Automation doctrine" }]}
+            actions={[{ href: "https://github.com/frankxai/trinityaicoaching/blob/main/Agent.md", label: "Agent guide", external: true }]}
           />
           <div className="mt-4 grid gap-3">
             {playbooks.map((playbook) => (
@@ -161,7 +161,7 @@ export default function HubHome() {
             eyebrow="Integrations"
             title="Tool connectors"
             description="Ensure the Trinity stack plugs into every external service."
-            actions={[{ href: "/docs/api", label: "API reference" }]}
+            actions={[{ href: "https://github.com/frankxai/trinityaicoaching/blob/main/docs/API.md", label: "API reference", external: true }]}
           />
           <div className="mt-4 grid gap-3">
             {integrations.map((tool) => (
@@ -180,3 +180,4 @@ export default function HubHome() {
     </div>
   );
 }
+

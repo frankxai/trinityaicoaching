@@ -12,7 +12,7 @@ export const metadata = {
       { url: "/og.svg", width: 1200, height: 630, alt: "Trinity AI" }
     ],
   },
-  twitter: { card: 'summary_large_image', title: 'Trinity AI Coaching Platform', description: 'Transform body, mind, and soul with AI‑aligned coaching.' },
+  twitter: { card: 'summary_large_image', title: 'Trinity AI Coaching Platform', description: 'Transform body, mind, and soul with AI-aligned coaching.' },
   icons: {
     icon: "/favicon.svg"
   }
@@ -54,19 +54,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="container-px mx-auto py-12 text-sm text-neutral-400 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-2">
                 <img alt="Trinity" src="/brand/icon.svg" className="h-5 w-5" />
-                <span>© {new Date().getFullYear()} Trinity AI</span>
+                <span>Copyright {new Date().getFullYear()} Trinity AI</span>
               </div>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <Link href="/" className="hover:text-white">Home</Link>
                 <Link href="/app" className="hover:text-white">Trinity Command</Link>
                 <Link href="/hub" className="hover:text-white">Coach Hub</Link>
                 <Link href="/coaches" className="hover:text-white">Coaches</Link>
-                <Link href="/docs/portal" className="hover:text-white">Portal Playbook</Link>
-                <Link href="/docs/vercel-env" className="hover:text-white">Vercel Setup</Link>
-                <Link href="/docs" className="hover:text-white">Docs</Link>
                 <Link href="/learn" className="hover:text-white">Learn</Link>
+                <Link href="/retreat" className="hover:text-white">Retreat</Link>
                 <Link href="/faq" className="hover:text-white">FAQ</Link>
-                <Link href="/roadmap" className="hover:text-white">Roadmap</Link>
                 <a href="https://github.com/frankxai/trinityaicoaching" className="hover:text-white" target="_blank" rel="noreferrer">GitHub</a>
               </div>
             </div>
@@ -76,3 +73,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+

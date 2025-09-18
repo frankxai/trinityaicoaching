@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { BrainCircuit, HeartHandshake, Activity, ShieldCheck, Sparkles } from "lucide-react";
 import { SectionHeading, Surface, Pill, BulletList } from "@/components/ui/primitives";
 import { avatarPersonas, learningModules, contributionPrograms, toolIntegrations, automationPlaybooks } from "@/lib/portalData";
@@ -8,7 +8,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://trinityaicoaching.v
 const faq = [
   {
     q: "Which APIs do I configure on Vercel?",
-    a: "Set `OPENAI_API_KEY` for live conversations now, add `NEXT_PUBLIC_SITE_URL`, and review `/docs/vercel-env` for database, auth, and billing keys as you scale."
+    a: "Set OPENAI_API_KEY for live conversations now and add NEXT_PUBLIC_SITE_URL so shared links resolve. The deployment checklist lives in the Trinity AI Knowledgebase under Environment & Keys."
   },
   {
     q: "How do AI avatars access workflows?",
@@ -16,15 +16,15 @@ const faq = [
   },
   {
     q: "Can I track Body, Mind, Soul outcomes in one place?",
-    a: "The Trinity Command dashboard merges Momentum Score, Soul Coherence, and Leverage Index—fed by check-ins, journals, and wearables."
+    a: "The Trinity Command dashboard merges Momentum Score, Soul Coherence, and Leverage Index - fed by check-ins, journals, and wearables."
   },
   {
     q: "How does tokenized accountability work?",
     a: "Brotherhood honors and contribution bounties mint rewards through the token treasury, with transparent milestones inside the dashboard."
   },
   {
-    q: "Where can my team access the search blueprint?",
-    a: "Point strategists and AI operators to `/docs/search-blueprint` and the `/coaches` hub for keywords, interlinking, and launch checklists."
+    q: "Where do I grab the playbooks?",
+    a: "The Trinity AI Knowledgebase in this repo and the Agent Operations Guide capture specs, rituals, and launch steps for humans and agents."
   }
 ];
 
@@ -37,30 +37,33 @@ const searchSignals = [
   {
     term: "Trinity command dashboard",
     intent: "Design",
-    route: "Deep-link visitors to /app and /docs/portal for capability details."
+    route: "Deep-link visitors to /app and point operators to the knowledgebase deployment checklist."
   },
   {
     term: "AI avatar coach workflows",
     intent: "Scale",
-    route: "Connect /agents, /hub, and /docs/search-blueprint to demonstrate automation pods."
+    route: "Connect /agents, /hub, and the Agent Operations Guide to demonstrate automation pods."
   }
 ];
 
 const searchResources = [
   {
-    title: "Coach & AI Search Blueprint",
-    description: "Persona-level keyword journeys and interlinking loops for humans and agents.",
-    href: "/docs/search-blueprint"
+    title: "Trinity AI Knowledgebase",
+    description: "Living handbook for rituals, specs, and deployment checklists.",
+    href: "https://github.com/frankxai/trinityaicoaching/blob/main/Trinity%20AI%20Knowledgebase.md",
+    external: true
   },
   {
-    title: "Vercel Environment Setup",
-    description: "Step-by-step instructions for configuring OPENAI_API_KEY and other keys on Vercel.",
-    href: "/docs/vercel-env"
+    title: "Agent Operations Guide",
+    description: "Agent.md documents hand-offs between humans and AI pods.",
+    href: "https://github.com/frankxai/trinityaicoaching/blob/main/Agent.md",
+    external: true
   },
   {
-    title: "Trinity for Coaches",
-    description: "Dedicated hub showing how mentors and AI operators deploy Trinity Command.",
-    href: "/coaches"
+    title: "Roadmap Snapshot",
+    description: "Internal roadmap lives in /internal/roadmap.html for progress tracking.",
+    href: "https://github.com/frankxai/trinityaicoaching/blob/main/internal/roadmap.html",
+    external: true
   }
 ];
 
@@ -122,7 +125,7 @@ export default function Page() {
           <div className="mx-auto max-w-4xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">
               <Sparkles className="h-3.5 w-3.5 text-brand-300" />
-              Build strength, clarity, and meaning — together.
+              Build strength, clarity, and meaning â€” together.
             </div>
             <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">
               <span className="rounded-sm bg-brand-600/20 text-brand-300 px-1.5 py-0.5">New</span>
@@ -133,7 +136,7 @@ export default function Page() {
               Coaching that balances Body, Mind, and Soul.
             </h1>
             <p className="mt-6 text-neutral-300 text-lg leading-relaxed">
-              Trinity blends three expert agents — Body Coach, Mind Coach, Soul Guide — into one supportive experience. Simple daily steps, honest weekly reviews, and kind accountability.
+              Trinity blends three expert agents â€” Body Coach, Mind Coach, Soul Guide â€” into one supportive experience. Simple daily steps, honest weekly reviews, and kind accountability.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link href="/app" className="rounded-md bg-brand-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-brand-600 transition">Open Dashboard</Link>
@@ -141,7 +144,8 @@ export default function Page() {
               <Link href="/app/coach" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Try Coach</Link>
               <Link href="/app/super-agent" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Super Agent</Link>
               <Link href="/app/get-started" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Get Started</Link>
-              <Link href="/docs/search-blueprint" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Search Blueprint</Link>
+              <a href="https://github.com/frankxai/trinityaicoaching/blob/main/Trinity%20AI%20Knowledgebase.md" target="_blank" rel="noreferrer" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Knowledgebase</a>
+              <Link href="/retreat" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Retreat Experience</Link>
             </div>
           </div>
         </div>
@@ -150,7 +154,7 @@ export default function Page() {
       <section className="container-px mx-auto max-w-7xl grid gap-6 sm:grid-cols-2 lg:grid-cols-4 -mt-8">
         <Feature icon={<Activity className="text-brand-300" />} title="Body Coach" desc="Training, nutrition, and recovery plans tailored to your baseline." />
         <Feature icon={<BrainCircuit className="text-brand-300" />} title="Mind Coach" desc="Cognition, discipline, habits, and deep work systems that stick." />
-        <Feature icon={<HeartHandshake className="text-brand-300" />} title="Soul Guide" desc="Values, mission, and alignment—build a life that feels true." />
+        <Feature icon={<HeartHandshake className="text-brand-300" />} title="Soul Guide" desc="Values, mission, and alignmentâ€”build a life that feels true." />
         <Feature icon={<ShieldCheck className="text-brand-300" />} title="Accountability" desc="Daily check-ins, weekly reviews, and gentle course correction." />
       </section>
 
@@ -159,7 +163,7 @@ export default function Page() {
           <h3 className="text-xl font-semibold">Our Principles</h3>
           <ul className="mt-3 grid gap-2 sm:grid-cols-3 text-sm text-neutral-300">
             <li><span className="font-medium text-white">Compassion over pressure.</span> We choose kind, sustainable change.</li>
-            <li><span className="font-medium text-white">Small steps win.</span> 1–3 actions a day beat perfect plans.</li>
+            <li><span className="font-medium text-white">Small steps win.</span> 1â€“3 actions a day beat perfect plans.</li>
             <li><span className="font-medium text-white">Evidence with context.</span> We prefer what works in real life.</li>
           </ul>
         </div>
@@ -168,15 +172,15 @@ export default function Page() {
       <section className="container-px mx-auto max-w-7xl mt-20 grid gap-8 lg:grid-cols-3">
         <div className="glass rounded-2xl p-8">
           <h3 className="text-xl font-semibold">Programs that fit real life</h3>
-          <p className="mt-3 text-neutral-300">Generate 7/30/90‑day plans and adapt weekly. Keep streaks visible and wins small but steady.</p>
+          <p className="mt-3 text-neutral-300">Generate 7/30/90â€‘day plans and adapt weekly. Keep streaks visible and wins small but steady.</p>
           <div className="mt-6 flex gap-3">
             <Link href="/app/plans" className="rounded-md bg-brand-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-brand-600 transition">Create Plan</Link>
-            <Link href="/roadmap" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Roadmap</Link>
+            <a href="https://github.com/frankxai/trinityaicoaching/blob/main/internal/roadmap.html" target="_blank" rel="noreferrer" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Roadmap snapshot</a>
           </div>
         </div>
         <div className="glass rounded-2xl p-8">
           <h3 className="text-xl font-semibold">Coach chat, now streaming</h3>
-          <p className="mt-3 text-neutral-300">Triad orchestration streams answers token‑by‑token for a smoother session.</p>
+          <p className="mt-3 text-neutral-300">Triad orchestration streams answers tokenâ€‘byâ€‘token for a smoother session.</p>
           <div className="mt-6 flex gap-3">
             <Link href="/app/coach" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Open Coach</Link>
             <Link href="/app/super-agent" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Super Agent</Link>
@@ -196,18 +200,17 @@ export default function Page() {
         <div className="glass rounded-2xl p-8">
           <h3 className="text-xl font-semibold">How Trinity works</h3>
           <ul className="mt-3 text-neutral-300 text-sm list-disc pl-5 space-y-1">
-            <li>Step 1 — Intake: set baselines and goals (5 min)</li>
-            <li>Step 2 — Plan: 7/30/90‑day program with 1–3 daily actions</li>
-            <li>Step 3 — Daily: check‑ins + streaks keep momentum</li>
-            <li>Step 4 — Weekly: review and adjust with kindness</li>
+            <li>Step 1 â€” Intake: set baselines and goals (5 min)</li>
+            <li>Step 2 â€” Plan: 7/30/90â€‘day program with 1â€“3 daily actions</li>
+            <li>Step 3 â€” Daily: checkâ€‘ins + streaks keep momentum</li>
+            <li>Step 4 â€” Weekly: review and adjust with kindness</li>
           </ul>
           <div className="mt-6">
-            <Link href="/docs" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Read the docs</Link>
           </div>
         </div>
         <div className="glass rounded-2xl p-8">
           <h3 className="text-xl font-semibold">From the blog</h3>
-          <p className="mt-3 text-neutral-300">Why we built a coach‑first AI platform and how it scales humans, not just content.</p>
+          <p className="mt-3 text-neutral-300">Why we built a coachâ€‘first AI platform and how it scales humans, not just content.</p>
           <div className="mt-6 flex gap-3">
             <Link href="/blog/trinity-ai-super-agent" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Read article</Link>
             <Link href="/blog" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">More posts</Link>
@@ -257,7 +260,7 @@ export default function Page() {
             eyebrow="Coaches + Agents"
             title="Built for human mentors and their AI counterparts"
             description="Give AI architects, avatar ops leads, and ritual keepers a command center that mirrors how they search, decide, and deploy." 
-            actions={[{ href: "/docs/portal", label: "Explore portal playbook" }]}
+            actions={[{ href: "/coaches", label: "Coach rituals" }]}
           />
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
@@ -304,8 +307,8 @@ export default function Page() {
             title="Optimised for how coaches and agents search"
             description="Map high-intent keywords to the right surfaces so mentors, ops leads, and LLM agents land where they can act."
             actions={[
-              { href: "/docs/search-blueprint", label: "View blueprint" },
-              { href: "/docs/vercel-env", label: "Vercel checklist" }
+              { href: "https://github.com/frankxai/trinityaicoaching/blob/main/Trinity%20AI%20Knowledgebase.md", label: "Knowledgebase", external: true },
+              { href: "https://github.com/frankxai/trinityaicoaching/blob/main/Agent.md", label: "Agent guide", external: true }
             ]}
           />
           <div className="mt-6 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
@@ -326,6 +329,19 @@ export default function Page() {
             </div>
             <div className="grid gap-3">
               {searchResources.map((resource) => (
+              resource.external ? (
+                <a
+                  key={resource.title}
+                  href={resource.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/10"
+                >
+                  <div className="text-sm font-semibold text-white">{resource.title}</div>
+                  <p className="mt-2 text-sm text-neutral-300">{resource.description}</p>
+                  <span className="mt-3 inline-flex text-xs text-brand-200">Open ↗</span>
+                </a>
+              ) : (
                 <Link
                   key={resource.title}
                   href={resource.href}
@@ -335,7 +351,8 @@ export default function Page() {
                   <p className="mt-2 text-sm text-neutral-300">{resource.description}</p>
                   <span className="mt-3 inline-flex text-xs text-brand-200">Open →</span>
                 </Link>
-              ))}
+              )
+            ))}
             </div>
           </div>
         </Surface>
@@ -436,7 +453,7 @@ export default function Page() {
             eyebrow="Questions"
             title="FAQ: launching TrinityAI"
             description="Answers to the highest-intent queries coaches and AI agents ask before deployment."
-            actions={[{ href: "/docs/deployment", label: "Deployment guide" }]}
+            actions={[{ href: "https://github.com/frankxai/trinityaicoaching/blob/main/Trinity%20AI%20Knowledgebase.md", label: "Deployment checklist", external: true }]}
           />
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {faq.map((item) => (
@@ -467,3 +484,13 @@ function Feature({ icon, title, desc }: { icon: React.ReactNode; title: string; 
     </div>
   );
 }
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getLocal, setLocal } from "@/lib/clientStore";
 import { PROGRAM_TEMPLATES } from "@/lib/programTemplates";
@@ -170,7 +171,7 @@ export default function PlansPage() {
                 <div className="text-neutral-400">{new Date(sp.createdAt).toLocaleString()} • {sp.horizon}-day</div>
               </div>
               <div className="flex gap-2">
-                <a href={`/app/plans/${sp.id}`} className="rounded-lg bg-white/10 px-3 py-1.5 text-sm hover:bg-white/20">View</a>
+                <Link href={`/app/plans/${sp.id}`} className="rounded-lg bg-white/10 px-3 py-1.5 text-sm hover:bg-white/20">View</Link>
                 <button onClick={()=>setPlan(sp.plan)} className="rounded-lg bg-white/10 px-3 py-1.5 text-sm hover:bg-white/20">Load</button>
                 <button onClick={()=>setActive(sp.id)} className={`rounded-lg px-3 py-1.5 text-sm ${activeId===sp.id?'bg-brand-600 hover:bg-brand-700':'bg-white/10 hover:bg-white/20'}`}>{activeId===sp.id?'Active':'Set active'}</button>
                 <button onClick={()=>deleteSaved(sp.id)} className="rounded-lg bg-white/10 px-3 py-1.5 text-sm hover:bg-white/20">Delete</button>

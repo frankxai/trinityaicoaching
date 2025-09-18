@@ -5,12 +5,11 @@ import { usePathname } from "next/navigation";
 const items = [
   { href: "/app", label: "Command" },
   { href: "/hub", label: "Hub" },
+  { href: "/retreat", label: "Retreat" },
   { href: "/coaches", label: "Coaches" },
   { href: "/agents", label: "Agents" },
   { href: "/learn", label: "Learn" },
-  { href: "/docs", label: "Docs" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/roadmap", label: "Roadmap" }
+  { href: "/pricing", label: "Pricing" }
 ];
 
 export default function HeaderNav() {
@@ -34,3 +33,4 @@ export default function HeaderNav() {
     </nav>
   );
 }
+

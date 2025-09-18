@@ -9,7 +9,7 @@ export default function TransparencyPage() {
           eyebrow="Integrity"
           title="Transparency Console"
           description="Monitor program health, milestone celebrations, and incentive flow so Trinity stays accountable."
-          actions={[{ href: "/docs/portal", label: "Portal playbook" }]}
+          actions={[{ href: "https://github.com/frankxai/trinityaicoaching/blob/main/Agent.md", label: "Agent guide", external: true }]}
         />
         <div className="mt-6 grid gap-4 md:grid-cols-3">
           {momentumMetrics.map((metric) => (
@@ -96,3 +96,4 @@ export default function TransparencyPage() {
     </div>
   );
 }
+

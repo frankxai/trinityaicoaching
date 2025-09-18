@@ -16,11 +16,12 @@
 ## Execution Workflow
 1. Align with docs/PORTAL_SPEC.md before planning significant work; it describes each surface and data dependency.
 2. Scope tasks using small, testable slices. Update or create specs when adding new UX surfaces or data contracts.
-3. Prefer editing shared data in lib/portalData.ts so marketing, app, and hub stay consistent.
-4. When touching /app features, respect localStorage namespaces (profile, plans.saved, plans.active, checkins.map, habits.items, journal.entries, settings). Persistence will move to Prisma soon.
-5. For coach-facing work under /hub, reuse primitives and check navigation links. Hide or implement dead routes before shipping.
-6. Use /app/settings defaults (triad orchestration, model overrides) when adjusting chat endpoints.
-7. Keep persona naming aligned with Trinity Prime, Athlete, Sage, Tactician, and Guardian branding.
+3. Log progress in ../local-roadmap.html (kept outside deploy scope) so the core team can track shipped vs planned work without leaking to production.
+4. Prefer editing shared data in lib/portalData.ts so marketing, app, and hub stay consistent.
+5. When touching /app features, respect localStorage namespaces (profile, plans.saved, plans.active, checkins.map, habits.items, journal.entries, settings). Persistence will move to Prisma soon.
+6. For coach-facing work under /hub, reuse primitives and check navigation links. Hide or implement dead routes before shipping.
+7. Use /app/settings defaults (triad orchestration, model overrides) when adjusting chat endpoints.
+8. Keep persona naming aligned with Trinity Prime, Athlete, Sage, Tactician, and Guardian branding.
 
 ## Data & Integrations
 - OpenAI usage is optional; route handlers fall back to templates when OPENAI_API_KEY is missing. Always guard network calls and surface graceful messaging.
@@ -39,3 +40,4 @@
 - Follow the planning tool workflow: outline steps for any medium or large task and update progress as milestones complete.
 - Leave concise code comments only when the intent is not obvious.
 - When introducing agents or automation, sync persona metadata between YAML files and portalData to avoid drift.
+
