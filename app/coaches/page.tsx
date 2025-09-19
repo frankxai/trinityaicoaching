@@ -309,7 +309,9 @@ export default function CoachesPage() {
                 </div>
 
                 <h3 className="text-lg font-semibold text-white mb-2">{persona.name}</h3>
-                <Pill className="mb-3">{persona.archetype}</Pill>
+                <div className="mb-3">
+                  <Pill>{persona.archetype}</Pill>
+                </div>
                 <p className="text-sm text-neutral-300 mb-4">{persona.tagline}</p>
 
                 <div className="text-xs text-neutral-400 mb-2">Specializes in:</div>
