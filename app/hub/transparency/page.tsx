@@ -1,4 +1,4 @@
-﻿import { SectionHeading, Surface, Pill, BulletList } from "@/components/ui/primitives";
+import { SectionHeading, Surface, Pill, BulletList } from "@/components/ui/primitives";
 import { momentumMetrics, journeyMilestones, contributionPrograms, automationPlaybooks } from "@/lib/portalData";
 
 export default function TransparencyPage() {

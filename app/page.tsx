@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { BrainCircuit, HeartHandshake, Activity, ShieldCheck, Sparkles } from "lucide-react";
 import { SectionHeading, Surface, Pill, BulletList } from "@/components/ui/primitives";
 import { avatarPersonas, learningModules, contributionPrograms, toolIntegrations, automationPlaybooks } from "@/lib/portalData";
@@ -125,7 +125,7 @@ export default function Page() {
           <div className="mx-auto max-w-4xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">
               <Sparkles className="h-3.5 w-3.5 text-brand-300" />
-              Build strength, clarity, and meaning â€” together.
+              Build strength, clarity, and meaning — together.
             </div>
             <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-neutral-300">
               <span className="rounded-sm bg-brand-600/20 text-brand-300 px-1.5 py-0.5">New</span>
@@ -136,7 +136,7 @@ export default function Page() {
               Coaching that balances Body, Mind, and Soul.
             </h1>
             <p className="mt-6 text-neutral-300 text-lg leading-relaxed">
-              Trinity blends three expert agents â€” Body Coach, Mind Coach, Soul Guide â€” into one supportive experience. Simple daily steps, honest weekly reviews, and kind accountability.
+              Trinity blends three expert agents — Body Coach, Mind Coach, Soul Guide — into one supportive experience. Simple daily steps, honest weekly reviews, and kind accountability.
             </p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               <Link href="/app" className="rounded-md bg-brand-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-brand-600 transition">Open Dashboard</Link>
@@ -154,7 +154,7 @@ export default function Page() {
       <section className="container-px mx-auto max-w-7xl grid gap-6 sm:grid-cols-2 lg:grid-cols-4 -mt-8">
         <Feature icon={<Activity className="text-brand-300" />} title="Body Coach" desc="Training, nutrition, and recovery plans tailored to your baseline." />
         <Feature icon={<BrainCircuit className="text-brand-300" />} title="Mind Coach" desc="Cognition, discipline, habits, and deep work systems that stick." />
-        <Feature icon={<HeartHandshake className="text-brand-300" />} title="Soul Guide" desc="Values, mission, and alignmentâ€”build a life that feels true." />
+        <Feature icon={<HeartHandshake className="text-brand-300" />} title="Soul Guide" desc="Values, mission, and alignment—build a life that feels true." />
         <Feature icon={<ShieldCheck className="text-brand-300" />} title="Accountability" desc="Daily check-ins, weekly reviews, and gentle course correction." />
       </section>
 
@@ -163,7 +163,7 @@ export default function Page() {
           <h3 className="text-xl font-semibold">Our Principles</h3>
           <ul className="mt-3 grid gap-2 sm:grid-cols-3 text-sm text-neutral-300">
             <li><span className="font-medium text-white">Compassion over pressure.</span> We choose kind, sustainable change.</li>
-            <li><span className="font-medium text-white">Small steps win.</span> 1â€“3 actions a day beat perfect plans.</li>
+            <li><span className="font-medium text-white">Small steps win.</span> 1-3 actions a day beat perfect plans.</li>
             <li><span className="font-medium text-white">Evidence with context.</span> We prefer what works in real life.</li>
           </ul>
         </div>
@@ -172,7 +172,7 @@ export default function Page() {
       <section className="container-px mx-auto max-w-7xl mt-20 grid gap-8 lg:grid-cols-3">
         <div className="glass rounded-2xl p-8">
           <h3 className="text-xl font-semibold">Programs that fit real life</h3>
-          <p className="mt-3 text-neutral-300">Generate 7/30/90â€‘day plans and adapt weekly. Keep streaks visible and wins small but steady.</p>
+          <p className="mt-3 text-neutral-300">Generate 7/30/90-day plans and adapt weekly. Keep streaks visible and wins small but steady.</p>
           <div className="mt-6 flex gap-3">
             <Link href="/app/plans" className="rounded-md bg-brand-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-brand-600 transition">Create Plan</Link>
             <a href="https://github.com/frankxai/trinityaicoaching/blob/main/internal/roadmap.html" target="_blank" rel="noreferrer" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Roadmap snapshot</a>
@@ -180,7 +180,7 @@ export default function Page() {
         </div>
         <div className="glass rounded-2xl p-8">
           <h3 className="text-xl font-semibold">Coach chat, now streaming</h3>
-          <p className="mt-3 text-neutral-300">Triad orchestration streams answers tokenâ€‘byâ€‘token for a smoother session.</p>
+          <p className="mt-3 text-neutral-300">Triad orchestration streams answers token-by-token for a smoother session.</p>
           <div className="mt-6 flex gap-3">
             <Link href="/app/coach" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Open Coach</Link>
             <Link href="/app/super-agent" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Super Agent</Link>
@@ -200,17 +200,17 @@ export default function Page() {
         <div className="glass rounded-2xl p-8">
           <h3 className="text-xl font-semibold">How Trinity works</h3>
           <ul className="mt-3 text-neutral-300 text-sm list-disc pl-5 space-y-1">
-            <li>Step 1 â€” Intake: set baselines and goals (5 min)</li>
-            <li>Step 2 â€” Plan: 7/30/90â€‘day program with 1â€“3 daily actions</li>
-            <li>Step 3 â€” Daily: checkâ€‘ins + streaks keep momentum</li>
-            <li>Step 4 â€” Weekly: review and adjust with kindness</li>
+            <li>Step 1 — Intake: set baselines and goals (5 min)</li>
+            <li>Step 2 — Plan: 7/30/90-day program with 1-3 daily actions</li>
+            <li>Step 3 — Daily: check-ins + streaks keep momentum</li>
+            <li>Step 4 — Weekly: review and adjust with kindness</li>
           </ul>
           <div className="mt-6">
           </div>
         </div>
         <div className="glass rounded-2xl p-8">
           <h3 className="text-xl font-semibold">From the blog</h3>
-          <p className="mt-3 text-neutral-300">Why we built a coachâ€‘first AI platform and how it scales humans, not just content.</p>
+          <p className="mt-3 text-neutral-300">Why we built a coach-first AI platform and how it scales humans, not just content.</p>
           <div className="mt-6 flex gap-3">
             <Link href="/blog/trinity-ai-super-agent" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">Read article</Link>
             <Link href="/blog" className="rounded-md bg-white/10 px-4 py-2.5 text-sm font-medium text-white hover:bg-white/20 transition">More posts</Link>

@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { SectionHeading, Surface, Pill, BulletList } from "@/components/ui/primitives";
 import {
   avatarPersonas,
