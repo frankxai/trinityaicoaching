@@ -59,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <Link href="/" className="hover:text-white">Home</Link>
                 <Link href="/app" className="hover:text-white">Trinity Command</Link>
+                <Link href="/workflows" className="hover:text-white">Workflows</Link>
                 <Link href="/hub" className="hover:text-white">Coach Hub</Link>
                 <Link href="/coaches" className="hover:text-white">Coaches</Link>
                 <Link href="/learn" className="hover:text-white">Learn</Link>

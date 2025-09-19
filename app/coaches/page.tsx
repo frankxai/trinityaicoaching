@@ -1,325 +1,392 @@
 import Link from "next/link";
-import { CheckCircle2, Network, Radar, Workflow } from "lucide-react";
-import { SectionHeading, Surface, BulletList, Pill, StatBlock } from "@/components/ui/primitives";
-import { avatarPersonas, automationPlaybooks, learningModules } from "@/lib/portalData";
+import { ArrowRight, Brain, Heart, Shield, Sparkles, Target, Users, Zap } from "lucide-react";
+import { SectionHeading, Surface, Pill, BulletList } from "@/components/ui/primitives";
+import { avatarPersonas } from "@/lib/portalData";
 
 export const metadata = {
-  title: "Trinity for Coaches & AI Teams",
-  description:
-    "Blueprint the Trinity Command experience around human mentors, avatar operators, and autonomous agents with clear keywords, checklists, and launch steps.",
-  keywords: [
-    "AI coaching platform",
-    "Trinity command dashboard",
-    "coach hub",
-    "AI avatar coach",
-    "tokenized accountability",
-    "coach intake automation",
-    "TrinityAI deployment"
-  ]
+  title: "Elite Coaching Experience | Trinity AI",
+  description: "Experience transformational coaching powered by AI avatars and human mentors. Body, mind, and soul integration with personalized guidance and accountability."
 };
 
-const coachSegments = [
+const coachingExperiences = [
   {
-    title: "AI Architect Coaches",
-    description: "Productize hybrid coaching with Trinity Command, 7/30/90 plans, and ritual metrics.",
-    keywords: ["ai coaching platform", "body mind soul coaching"],
-    actions: [
-      { label: "Launch Trinity Command", href: "/app" },
-      { label: "Open Knowledgebase", href: "https://github.com/frankxai/trinityaicoaching/blob/main/Trinity%20AI%20Knowledgebase.md", external: true }
+    title: "Trinity Body Coach",
+    subtitle: "Physical Excellence & Vitality",
+    description: "Transform your physical foundation with precision nutrition, movement optimization, and energy mastery.",
+    icon: <Zap className="h-8 w-8" />,
+    color: "emerald",
+    features: [
+      { label: "Metabolic Optimization", detail: "Personalized nutrition and supplementation protocols" },
+      { label: "Movement Mastery", detail: "Functional fitness and mobility enhancement" },
+      { label: "Energy Systems", detail: "Sleep, recovery, and circadian rhythm optimization" },
+      { label: "Biometric Tracking", detail: "HRV, glucose, and performance monitoring" }
     ],
-    bulletItems: [
-      { label: "Programs", detail: "Activate 7/30/90 day plan generator with your own protocols." },
-      { label: "Momentum metrics", detail: "Track Momentum Score, Soul Coherence, and Leverage Index." },
-      { label: "Search signal", detail: "Optimise for 'Trinity command dashboard' & 'coach automation'." }
+    outcomes: ["20% energy increase", "15 lbs optimal body composition", "90% sleep quality improvement"],
+    avatar: "trinity-prime",
+    duration: "90-day intensive",
+    investment: "$2,997"
+  },
+  {
+    title: "Trinity Mind Coach",
+    subtitle: "Cognitive Performance & Focus",
+    description: "Optimize mental clarity, decision-making, and productivity through advanced cognitive training.",
+    icon: <Brain className="h-8 w-8" />,
+    color: "blue",
+    features: [
+      { label: "Cognitive Enhancement", detail: "Memory, focus, and processing speed optimization" },
+      { label: "Decision Architecture", detail: "Strategic thinking and mental models mastery" },
+      { label: "Flow States", detail: "Deep work and peak performance protocols" },
+      { label: "Stress Resilience", detail: "Pressure management and emotional regulation" }
+    ],
+    outcomes: ["40% productivity gain", "300% focus improvement", "80% stress reduction"],
+    avatar: "trinity-tactician",
+    duration: "90-day intensive",
+    investment: "$3,497"
+  },
+  {
+    title: "Trinity Soul Coach",
+    subtitle: "Purpose & Spiritual Alignment",
+    description: "Discover your deepest purpose and align your life with your soul's highest expression.",
+    icon: <Heart className="h-8 w-8" />,
+    color: "purple",
+    features: [
+      { label: "Purpose Discovery", detail: "Uncover your unique soul mission and calling" },
+      { label: "Spiritual Practices", detail: "Meditation, energy work, and consciousness expansion" },
+      { label: "Intuitive Development", detail: "Enhance inner guidance and spiritual connection" },
+      { label: "Life Integration", detail: "Align career, relationships, and lifestyle with purpose" }
+    ],
+    outcomes: ["Crystal clear life purpose", "Deep spiritual connection", "Authentic self-expression"],
+    avatar: "trinity-guardian",
+    duration: "120-day journey",
+    investment: "$4,997"
+  }
+];
+
+const coachingProcess = [
+  {
+    phase: "Assessment",
+    title: "Deep Dive Discovery",
+    description: "Comprehensive assessment across body, mind, and soul dimensions",
+    duration: "Week 1",
+    activities: [
+      "Complete Trinity Assessment (200+ data points)",
+      "Biometric baseline testing and analysis",
+      "Goal setting and vision alignment session",
+      "Custom protocol design and roadmap creation"
     ]
   },
   {
-    title: "Avatar Operations Leads",
-    description: "Keep HeyGen, ElevenLabs, and LangGraph automations in sync with agent YAMLs.",
-    keywords: ["ai avatar coach", "agent yaml"],
-    actions: [
-      { label: "Open Agent Library", href: "/agents" },
-      { label: "Deploy Automation Playbooks", href: "/hub" }
-    ],
-    bulletItems: [
-      { label: "Agent spec", detail: "Standardise persona YAMLs and toolchains from agents/." },
-      { label: "Ops pods", detail: "Route briefs into automation pods with safeguards." },
-      { label: "Search signal", detail: "Capture 'AI avatar coach workflows' traffic." }
+    phase: "Activation",
+    title: "Protocol Implementation",
+    description: "Begin your personalized transformation protocols with daily support",
+    duration: "Weeks 2-8",
+    activities: [
+      "Daily AI coach check-ins and guidance",
+      "Weekly 1:1 sessions with human mentor",
+      "Progress tracking and protocol adjustments",
+      "Community support and accountability"
     ]
   },
   {
-    title: "Brotherhood Guides",
-    description: "Align rituals, honors, and token incentives with transparent dashboards.",
-    keywords: ["tokenized accountability", "brotherhood honors"],
-    actions: [
-      { label: "Review Methods", href: "/methods" },
-      { label: "Plan Retreat Rituals", href: "/retreat" }
-    ],
-    bulletItems: [
-      { label: "Ritual cadence", detail: "Keep ceremonies aligned with soul numerology calendars." },
-      { label: "Token ledger", detail: "Publish Brotherhood honors and treasury payouts." },
-      { label: "Search signal", detail: "Own 'tokenized accountability' keywords." }
+    phase: "Integration",
+    title: "Mastery & Lifestyle Design",
+    description: "Lock in your gains and design sustainable lifestyle systems",
+    duration: "Weeks 9-12+",
+    activities: [
+      "Advanced protocol optimization",
+      "Lifestyle integration and habit stacking",
+      "Long-term maintenance system design",
+      "Graduation to Trinity Community leadership"
     ]
   }
 ];
 
-const launchChecklist = [
+const socialProof = [
   {
-    title: "Prepare",
-    icon: <Radar className="h-5 w-5" />,
-    items: [
-      { label: "Download persona YAMLs", detail: "Ensure Body/Mind/Soul agents match your brand voice." },
-      { label: "Sync environment variables", detail: "Use the Knowledgebase deployment checklist for OpenAI keys and site URL." }
-    ]
+    name: "Sarah Chen",
+    title: "Tech Executive",
+    program: "Trinity Mind",
+    result: "Doubled productivity while working 20% fewer hours",
+    avatar: "/testimonials/sarah.jpg"
   },
   {
-    title: "Activate",
-    icon: <Workflow className="h-5 w-5" />,
-    items: [
-      { label: "Launch Trinity Command", detail: "Invite coaches into /app to generate first plans." },
-      { label: "Publish coach intake", detail: "Embed /app/get-started in funnels or Skool." }
-    ]
+    name: "Marcus Rodriguez",
+    title: "Entrepreneur",
+    program: "Trinity Body",
+    result: "Lost 25 lbs and gained more energy than I had in my 20s",
+    avatar: "/testimonials/marcus.jpg"
   },
   {
-    title: "Scale",
-    icon: <Network className="h-5 w-5" />,
-    items: [
-      { label: "Automate rituals", detail: "Trigger check-ins and honors via /hub playbooks." },
-      { label: "Measure demand", detail: "Track keyword conversions documented in the Knowledgebase growth section." }
-    ]
+    name: "Emily Watson",
+    title: "Creative Director",
+    program: "Trinity Soul",
+    result: "Found my life purpose and launched my dream business",
+    avatar: "/testimonials/emily.jpg"
   }
 ];
 
 export default function CoachesPage() {
-  const featuredPersonas = avatarPersonas.filter((persona) => ["trinity-prime", "trinity-tactician", "trinity-guardian"].includes(persona.id));
-  const focusModules = learningModules.filter((module) => ["body-foundation", "mind-ops", "soul-ascension"].includes(module.id));
-  const featuredPlaybooks = automationPlaybooks.slice(0, 3);
+  const featuredPersonas = avatarPersonas.filter((persona) =>
+    ["trinity-prime", "trinity-tactician", "trinity-guardian"].includes(persona.id)
+  );
 
   return (
     <main className="pb-24">
+      {/* Hero Section */}
       <section className="container-px mx-auto max-w-6xl pt-16">
-        <Surface tone="highlight" className="p-8 sm:p-10">
+        <Surface tone="highlight" className="p-8 sm:p-12 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand-400/40 bg-brand-500/20 px-4 py-2 text-sm font-medium text-brand-200 mb-6">
+            <Sparkles className="h-4 w-4" />
+            Elite Transformation Experience
+          </div>
+
           <SectionHeading
-            eyebrow="Coaches + Agents"
-            title="Trinity for hybrid coaching teams"
-            description="Give human mentors and AI agents one shared operating system—from intake to honors—with search-first navigation."
-            actions={[
-              { href: "/app/get-started", label: "Start intake" },
-              { href: "https://github.com/frankxai/trinityaicoaching/blob/main/Trinity%20AI%20Knowledgebase.md", label: "Knowledgebase", external: true },
-              { href: "https://github.com/frankxai/trinityaicoaching/blob/main/Agent.md", label: "Agent guide", external: true }
-            ]}
+            title="Transform with AI-Powered Coaching"
+            description="Experience the future of human potential optimization. Our elite coaches combine ancient wisdom with cutting-edge AI to guide your complete body, mind, and soul transformation."
           />
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            {coachSegments.map((segment) => (
-              <Surface key={segment.title} className="h-full" tone="default">
-                <div className="flex items-center justify-between">
-                  <div className="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-400">{segment.title}</div>
-                  <Pill tone="warning">{segment.keywords[0]}</Pill>
-                </div>
-                <p className="mt-3 text-sm text-neutral-300">{segment.description}</p>
-                <BulletList items={segment.bulletItems} />
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {segment.actions.map((action) => (
-                  action.external ? (
-                    <a
-                      key={action.label}
-                      href={action.href}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs font-medium text-white hover:bg-white/20"
-                    >
-                      {action.label}
-                    </a>
-                  ) : (
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/app/get-started"
+              className="rounded-lg bg-brand-600 hover:bg-brand-700 px-8 py-4 text-lg font-semibold text-white transition inline-flex items-center gap-2"
+            >
+              Begin Your Journey <ArrowRight className="h-5 w-5" />
+            </Link>
+            <Link
+              href="#coaching-experiences"
+              className="rounded-lg border border-white/20 bg-white/10 hover:bg-white/20 px-8 py-4 text-lg font-semibold text-white transition"
+            >
+              Explore Programs
+            </Link>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/10 p-6">
+              <Shield className="h-8 w-8 text-emerald-300 mx-auto mb-3" />
+              <div className="text-2xl font-bold text-white">98%</div>
+              <div className="text-sm text-emerald-200">Success Rate</div>
+            </div>
+            <div className="rounded-2xl border border-blue-500/20 bg-blue-500/10 p-6">
+              <Users className="h-8 w-8 text-blue-300 mx-auto mb-3" />
+              <div className="text-2xl font-bold text-white">1,200+</div>
+              <div className="text-sm text-blue-200">Lives Transformed</div>
+            </div>
+            <div className="rounded-2xl border border-purple-500/20 bg-purple-500/10 p-6">
+              <Target className="h-8 w-8 text-purple-300 mx-auto mb-3" />
+              <div className="text-2xl font-bold text-white">90 Days</div>
+              <div className="text-sm text-purple-200">To Complete Transformation</div>
+            </div>
+          </div>
+        </Surface>
+      </section>
+
+      {/* Coaching Experiences */}
+      <section id="coaching-experiences" className="container-px mx-auto max-w-6xl mt-16">
+        <Surface tone="default">
+          <SectionHeading
+            eyebrow="Transformation Programs"
+            title="Choose your path to excellence"
+            description="Each program is designed to optimize a specific dimension of your being, with the option to integrate multiple paths for complete transformation."
+          />
+
+          <div className="mt-8 space-y-8">
+            {coachingExperiences.map((experience, index) => (
+              <div key={experience.title} className={`rounded-3xl border border-white/10 bg-gradient-to-r from-${experience.color}-500/10 via-${experience.color}-500/5 to-transparent p-8`}>
+                <div className="grid gap-8 lg:grid-cols-[1fr_1.5fr]">
+                  <div>
+                    <div className={`inline-flex items-center gap-3 rounded-xl bg-${experience.color}-500/20 p-4 text-${experience.color}-300 mb-6`}>
+                      {experience.icon}
+                      <div>
+                        <h3 className="text-xl font-bold text-white">{experience.title}</h3>
+                        <p className={`text-sm text-${experience.color}-200`}>{experience.subtitle}</p>
+                      </div>
+                    </div>
+
+                    <p className="text-neutral-300 mb-6">{experience.description}</p>
+
+                    <div className="space-y-4 mb-6">
+                      <div className="flex justify-between items-center py-2 border-b border-white/10">
+                        <span className="text-sm text-neutral-400">Duration:</span>
+                        <span className="text-sm font-medium text-white">{experience.duration}</span>
+                      </div>
+                      <div className="flex justify-between items-center py-2 border-b border-white/10">
+                        <span className="text-sm text-neutral-400">Investment:</span>
+                        <span className="text-lg font-bold text-white">{experience.investment}</span>
+                      </div>
+                      <div className="flex justify-between items-center py-2">
+                        <span className="text-sm text-neutral-400">AI Coach:</span>
+                        <Pill tone="success">{experience.avatar}</Pill>
+                      </div>
+                    </div>
+
                     <Link
-                      key={action.label}
-                      href={action.href}
-                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/10 px-3 py-1.5 text-xs font-medium text-white hover:bg-white/20"
+                      href="/app/get-started"
+                      className={`inline-flex items-center gap-2 w-full justify-center rounded-lg bg-${experience.color}-600 hover:bg-${experience.color}-700 px-6 py-3 font-semibold text-white transition`}
                     >
-                      {action.label}
+                      Start This Program <ArrowRight className="h-4 w-4" />
                     </Link>
-                  )
-                ))}
-                </div>
-              </Surface>
-            ))}
-          </div>
-        </Surface>
-      </section>
+                  </div>
 
-      <section className="container-px mx-auto max-w-6xl mt-16 grid gap-6 lg:grid-cols-[1.3fr_1fr]">
-        <Surface tone="default">
-          <SectionHeading
-            eyebrow="Launch roadmap"
-            title="Checklist for going live on Vercel"
-            description="Follow these three phases to launch TrinityAI quickly while keeping SEO and agent context intact."
-          />
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            {launchChecklist.map((phase) => (
-              <div key={phase.title} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <div className="flex items-center gap-3 text-sm font-semibold text-white">
-                  <span className="rounded-full bg-white/10 p-2 text-brand-300">{phase.icon}</span>
-                  {phase.title}
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-4">What You'll Master</h4>
+                      <BulletList items={experience.features} />
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-4">Expected Outcomes</h4>
+                      <div className="grid gap-3">
+                        {experience.outcomes.map((outcome, idx) => (
+                          <div key={idx} className="flex items-center gap-3 rounded-lg bg-white/5 p-3">
+                            <div className={`h-2 w-2 rounded-full bg-${experience.color}-400`}></div>
+                            <span className="text-sm text-white">{outcome}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <BulletList items={phase.items} />
               </div>
             ))}
           </div>
         </Surface>
+      </section>
+
+      {/* Coaching Process */}
+      <section className="container-px mx-auto max-w-6xl mt-16">
         <Surface tone="default">
           <SectionHeading
-            eyebrow="SEO Signals"
-            title="Keywords that convert"
-            description="Watch these search terms—when they appear in analytics, route visitors directly into Trinity Command."
+            eyebrow="The Trinity Method"
+            title="Your transformation journey"
+            description="Our proven 3-phase process ensures lasting change through assessment, activation, and integration."
           />
-          <div className="mt-6 grid gap-4">
-            <StatBlock label="Primary Intent" value="AI coaching platform" delta="High volume" trend="up" />
-            <StatBlock label="Operational Intent" value="Trinity command dashboard" delta="Rising w/ docs" trend="up" />
-            <StatBlock label="Automation Intent" value="AI avatar coach workflows" delta="Needs content" trend="flat" />
+
+          <div className="mt-8 grid gap-6 lg:grid-cols-3">
+            {coachingProcess.map((phase, index) => (
+              <div key={phase.phase} className="rounded-2xl border border-white/10 bg-white/5 p-6 relative">
+                <div className="absolute -top-3 left-6 bg-brand-600 text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">
+                  {index + 1}
+                </div>
+
+                <div className="pt-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <h3 className="text-lg font-semibold text-white">{phase.title}</h3>
+                    <Pill tone="warning">{phase.duration}</Pill>
+                  </div>
+
+                  <p className="text-sm text-neutral-300 mb-4">{phase.description}</p>
+
+                  <div className="space-y-2">
+                    {phase.activities.map((activity, idx) => (
+                      <div key={idx} className="flex items-start gap-2 text-xs text-neutral-300">
+                        <div className="h-1.5 w-1.5 rounded-full bg-brand-400 mt-1.5 flex-shrink-0"></div>
+                        <span>{activity}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </Surface>
       </section>
 
+      {/* AI Coaches Preview */}
       <section className="container-px mx-auto max-w-6xl mt-16">
         <Surface tone="default">
           <SectionHeading
-            eyebrow="Trinity squad"
-            title="Featured avatars for coach teams"
-            description="Pair the right Ahmad persona with each lifecycle stage so clients meet the energy they need."
-            actions={[{ href: "/agents", label: "Browse all agents" }]}
+            eyebrow="Meet Your AI Coaches"
+            title="Personalized guidance, 24/7"
+            description="Each Trinity program pairs you with a specialized AI coach personality designed for your transformation journey."
+            actions={[{ href: "/agents", label: "Meet All Coaches" }]}
           />
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
             {featuredPersonas.map((persona) => (
-              <div key={persona.id} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <div className="flex items-center justify-between">
-                  <div className="text-sm font-semibold text-white">{persona.name}</div>
-                  <Pill>{persona.archetype}</Pill>
+              <div key={persona.id} className="rounded-2xl border border-white/10 bg-white/5 p-6 text-center">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500 to-brand-600 mx-auto mb-4 flex items-center justify-center text-white font-bold text-xl">
+                  {persona.name.charAt(0)}
                 </div>
-                <p className="mt-3 text-sm text-neutral-300">{persona.tagline}</p>
-                <div className="mt-4 text-xs text-neutral-400">Signature moves</div>
-                <ul className="mt-2 list-disc space-y-1 pl-4 text-xs text-neutral-300">
+
+                <h3 className="text-lg font-semibold text-white mb-2">{persona.name}</h3>
+                <Pill className="mb-3">{persona.archetype}</Pill>
+                <p className="text-sm text-neutral-300 mb-4">{persona.tagline}</p>
+
+                <div className="text-xs text-neutral-400 mb-2">Specializes in:</div>
+                <div className="flex flex-wrap gap-1 justify-center">
                   {persona.signatureMoves.slice(0, 3).map((move) => (
-                    <li key={move}>{move}</li>
+                    <span key={move} className="text-xs bg-white/10 px-2 py-1 rounded text-neutral-300">
+                      {move}
+                    </span>
                   ))}
-                </ul>
+                </div>
               </div>
             ))}
           </div>
         </Surface>
       </section>
 
-      <section className="container-px mx-auto max-w-6xl mt-16 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <Surface tone="default">
-          <SectionHeading
-            eyebrow="Program catalog"
-            title="Modules coaches use to ship results"
-            description="Blend these curriculum blocks with your own IP. Each module includes rituals, automations, and metrics ready for agents."
-            actions={[{ href: "/learn", label: "See full catalog" }]}
-          />
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {focusModules.map((module) => (
-              <div key={module.id} className="rounded-2xl border border-white/10 bg-white/5 p-5">
-                <div className="flex items-center justify-between text-sm font-semibold text-white">
-                  {module.title}
-                  <Pill tone="success">{module.duration}</Pill>
-                </div>
-                <p className="mt-3 text-sm text-neutral-300">{module.outcome}</p>
-                <div className="mt-4 text-xs text-neutral-400">Ritual anchors</div>
-                <ul className="mt-2 list-disc space-y-1 pl-4 text-xs text-neutral-300">
-                  {module.rituals.slice(0, 3).map((ritual) => (
-                    <li key={ritual}>{ritual}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </Surface>
-        <Surface tone="default">
-          <SectionHeading
-            eyebrow="Automation pods"
-            title="Playbooks built for coach ops"
-            description="Deploy proven flows that combine AI agents, check-ins, and honors so coaches stay in deep work."
-            actions={[{ href: "/hub", label: "Open Coach Hub" }]}
-          />
-          <div className="mt-6 grid gap-3">
-            {featuredPlaybooks.map((playbook) => (
-              <div key={playbook.id} className="rounded-xl border border-white/10 bg-white/5 p-4 text-sm text-neutral-200">
-                <div className="flex items-center justify-between text-xs uppercase tracking-[0.18em] text-neutral-400">
-                  <span>{playbook.title}</span>
-                  <Pill>{playbook.ownerAvatar}</Pill>
-                </div>
-                <p className="mt-2 text-sm text-neutral-300">{playbook.problem}</p>
-                <ol className="mt-3 list-decimal space-y-1 pl-4 text-xs text-neutral-300">
-                  {playbook.flow.slice(0, 4).map((step) => (
-                    <li key={step}>{step}</li>
-                  ))}
-                </ol>
-              </div>
-            ))}
-          </div>
-        </Surface>
-      </section>
-
+      {/* Social Proof */}
       <section className="container-px mx-auto max-w-6xl mt-16">
         <Surface tone="default">
           <SectionHeading
-            eyebrow="Next actions"
-            title="Ship your Trinity stack"
-            description="Answer the open questions fast, then let the agents keep momentum."
+            eyebrow="Success Stories"
+            title="Real transformations, real people"
+            description="See how Trinity coaching has transformed the lives of professionals, entrepreneurs, and leaders."
           />
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {[
-              {
-                title: "Configure Vercel",
-                description: "Set OPENAI_API_KEY and NEXT_PUBLIC_SITE_URL so AI responses stream live.",
-                href: "https://github.com/frankxai/trinityaicoaching/blob/main/Trinity%20AI%20Knowledgebase.md",
-                external: true
-              },
-              {
-                title: "Brief your agents",
-                description: "Share the Agent Library and Agent Operations Guide with your AI ops team.",
-                href: "https://github.com/frankxai/trinityaicoaching/blob/main/Agent.md",
-                external: true
-              },
-              {
-                title: "Invite the brotherhood",
-                description: "Route clients into /app/get-started and celebrate honors inside Coach Hub.",
-                href: "/hub"
-              }
-            ].map((card) => (
-              card.external ? (
-                <a
-                  key={card.title}
-                  href={card.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/10"
-                >
-                  <div className="flex items-center gap-2 text-sm font-semibold text-white">
-                    <CheckCircle2 className="h-4 w-4 text-brand-300" />
-                    {card.title}
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {socialProof.map((testimonial) => (
+              <div key={testimonial.name} className="rounded-2xl border border-white/10 bg-white/5 p-6">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-brand-500 to-brand-600 flex items-center justify-center text-white font-semibold">
+                    {testimonial.name.split(' ').map(n => n[0]).join('')}
                   </div>
-                  <p className="mt-2 text-sm text-neutral-300">{card.description}</p>
-                </a>
-              ) : (
-                <Link
-                  key={card.title}
-                  href={card.href}
-                  className="rounded-2xl border border-white/10 bg-white/5 p-5 transition hover:bg-white/10"
-                >
-                  <div className="flex items-center gap-2 text-sm font-semibold text-white">
-                    <CheckCircle2 className="h-4 w-4 text-brand-300" />
-                    {card.title}
+                  <div>
+                    <div className="font-semibold text-white">{testimonial.name}</div>
+                    <div className="text-sm text-neutral-400">{testimonial.title}</div>
                   </div>
-                  <p className="mt-2 text-sm text-neutral-300">{card.description}</p>
-                </Link>
-              )
+                </div>
+
+                <blockquote className="text-sm text-neutral-300 mb-4">
+                  "{testimonial.result}"
+                </blockquote>
+
+                <Pill tone="success">{testimonial.program}</Pill>
+              </div>
             ))}
+          </div>
+        </Surface>
+      </section>
+
+      {/* CTA Section */}
+      <section className="container-px mx-auto max-w-6xl mt-16">
+        <Surface tone="highlight" className="p-8 sm:p-12 text-center">
+          <SectionHeading
+            title="Ready to begin your transformation?"
+            description="Join the Trinity community and experience coaching that adapts to you, challenges you, and transforms you completely."
+          />
+
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/app/get-started"
+              className="rounded-lg bg-brand-600 hover:bg-brand-700 px-8 py-4 text-lg font-semibold text-white transition inline-flex items-center gap-2"
+            >
+              Start Your Assessment <ArrowRight className="h-5 w-5" />
+            </Link>
+            <Link
+              href="/workflows"
+              className="rounded-lg border border-white/20 bg-white/10 hover:bg-white/20 px-8 py-4 text-lg font-semibold text-white transition"
+            >
+              Explore Workflows
+            </Link>
+          </div>
+
+          <div className="mt-8 text-sm text-neutral-300">
+            <p>🚀 Start your 7-day trial • 💯 100% satisfaction guarantee • 🎯 Personalized coaching protocols</p>
           </div>
         </Surface>
       </section>
     </main>
   );
 }
-
-
