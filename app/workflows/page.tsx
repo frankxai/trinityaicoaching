@@ -299,7 +299,7 @@ export default function WorkflowsPage() {
             {workflowCategories.map((category) => (
               <div key={category.id} className="rounded-2xl border border-white/10 bg-white/5 p-6">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`rounded-xl bg-${category.color}-500/20 p-3 text-${category.color}-300`}>
+                  <div className={`rounded-xl ${category.color === 'emerald' ? 'bg-emerald-500/20 text-emerald-300' : category.color === 'blue' ? 'bg-blue-500/20 text-blue-300' : 'bg-purple-500/20 text-purple-300'} p-3`}>
                     {category.icon}
                   </div>
                   <div>

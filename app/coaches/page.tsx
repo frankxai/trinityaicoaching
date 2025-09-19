@@ -190,15 +190,44 @@ export default function CoachesPage() {
           />
 
           <div className="mt-8 space-y-8">
-            {coachingExperiences.map((experience, index) => (
-              <div key={experience.title} className={`rounded-3xl border border-white/10 bg-gradient-to-r from-${experience.color}-500/10 via-${experience.color}-500/5 to-transparent p-8`}>
+            {coachingExperiences.map((experience, index) => {
+              const colorClasses = {
+                emerald: {
+                  gradient: 'bg-gradient-to-r from-emerald-500/10 via-emerald-500/5 to-transparent',
+                  iconBg: 'bg-emerald-500/20',
+                  iconText: 'text-emerald-300',
+                  subtitle: 'text-emerald-200',
+                  button: 'bg-emerald-600 hover:bg-emerald-700',
+                  dot: 'bg-emerald-400'
+                },
+                blue: {
+                  gradient: 'bg-gradient-to-r from-blue-500/10 via-blue-500/5 to-transparent',
+                  iconBg: 'bg-blue-500/20',
+                  iconText: 'text-blue-300',
+                  subtitle: 'text-blue-200',
+                  button: 'bg-blue-600 hover:bg-blue-700',
+                  dot: 'bg-blue-400'
+                },
+                purple: {
+                  gradient: 'bg-gradient-to-r from-purple-500/10 via-purple-500/5 to-transparent',
+                  iconBg: 'bg-purple-500/20',
+                  iconText: 'text-purple-300',
+                  subtitle: 'text-purple-200',
+                  button: 'bg-purple-600 hover:bg-purple-700',
+                  dot: 'bg-purple-400'
+                }
+              };
+              const colors = colorClasses[experience.color as keyof typeof colorClasses];
+
+              return (
+              <div key={experience.title} className={`rounded-3xl border border-white/10 ${colors.gradient} p-8`}>
                 <div className="grid gap-8 lg:grid-cols-[1fr_1.5fr]">
                   <div>
-                    <div className={`inline-flex items-center gap-3 rounded-xl bg-${experience.color}-500/20 p-4 text-${experience.color}-300 mb-6`}>
+                    <div className={`inline-flex items-center gap-3 rounded-xl ${colors.iconBg} p-4 ${colors.iconText} mb-6`}>
                       {experience.icon}
                       <div>
                         <h3 className="text-xl font-bold text-white">{experience.title}</h3>
-                        <p className={`text-sm text-${experience.color}-200`}>{experience.subtitle}</p>
+                        <p className={`text-sm ${colors.subtitle}`}>{experience.subtitle}</p>
                       </div>
                     </div>
 
@@ -221,7 +250,7 @@ export default function CoachesPage() {
 
                     <Link
                       href="/app/get-started"
-                      className={`inline-flex items-center gap-2 w-full justify-center rounded-lg bg-${experience.color}-600 hover:bg-${experience.color}-700 px-6 py-3 font-semibold text-white transition`}
+                      className={`inline-flex items-center gap-2 w-full justify-center rounded-lg ${colors.button} px-6 py-3 font-semibold text-white transition`}
                     >
                       Start This Program <ArrowRight className="h-4 w-4" />
                     </Link>
@@ -238,7 +267,7 @@ export default function CoachesPage() {
                       <div className="grid gap-3">
                         {experience.outcomes.map((outcome, idx) => (
                           <div key={idx} className="flex items-center gap-3 rounded-lg bg-white/5 p-3">
-                            <div className={`h-2 w-2 rounded-full bg-${experience.color}-400`}></div>
+                            <div className={`h-2 w-2 rounded-full ${colors.dot}`}></div>
                             <span className="text-sm text-white">{outcome}</span>
                           </div>
                         ))}
@@ -247,7 +276,8 @@ export default function CoachesPage() {
                   </div>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </Surface>
       </section>
